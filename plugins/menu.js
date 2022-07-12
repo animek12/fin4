@@ -322,14 +322,7 @@ let ftt = `📮 Catatan: Perlakukan Bot Secara Baik, Dev Akan Bertindak Tegas Ap
                  
                        「 *廾ΛӨЯI IQ MD ᯤ* 」`
      if (teks == '404') { 
-      return await conn.send2ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/ed6e4421aff4471b172f0.jpg')).buffer(), tksk, ftt, 'COMMAND', '.simplemenu', 'DONASI', '.donasi', haori, { contextInfo: { mentionedJid: conn.parseMention(tksk), externalAdReply :{ 
-     mediaUrl: `${pickRandom([`https://www.facebook.com/Inunime-107082474576049/`,`https://youtu.be/JWHV8lPTzPs`])}`, 
-     mediaType: 2, 
-     description:  '',  
-     title: `${ucapan()} Kak ${name} UωU`,
-     body: `${pickRandom(['udah makan belum kak?', 'udh mandi belum kak?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'jangan spam ya kak!', 'Jangan lupa donasi yak kak! >.<', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! >.<', 'I Love you kak >.< 💗✨', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`,
-     thumbnail: await (await fetch('https://telegra.ph/file/f64d6f546f3a28186a9ab.jpg')).buffer(),
-     sourceUrl: 'https://vt.tiktok.com/ZSdwokqe4/'}}})
+      return conn.send3ButtonLoc(m.chat, await (await fetch('https://telegra.ph/file/c73f47b440241b66cb9d3.jpg')).buffer(), tksk, ftt, 'COMMAND', '.simplemenu', 'DONASI', '.donasi', 'OWNER', '.nowner', m, { contextInfo: { mentionedJid: conn.parseMention(tksk)}})
   
     }
      let groups = {} 
