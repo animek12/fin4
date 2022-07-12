@@ -1,4 +1,3 @@
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
 let levelling = require('../lib/levelling')
 let fs = require('fs')
 let path = require('path')
@@ -7,51 +6,39 @@ let moment = require('moment-timezone')
 let jimp = require('jimp')
 let PhoneNumber = require('awesome-phonenumber')
 const defaultMenu = {
-   before: ` 
-─────────•〔 ll нασяι-вσт ཻུ⸙͎ 〕•─────────
-
-🎐  *Name:* %name
-🎐  *Tersisa:* %limit Limit
-🎐  *Role:* %role
-🎐  *Level:* %level [ %xp4levelup ]
-🎐  *XP:* %exp / %maxexp
-🎐  %totalexp XP secara Total 
- 
-                  *〔 llı TODAY llı 〕*
-                 
-🎐  *Tanggal:* %week %weton, %date
-🎐  *Tanggal Islam:* %dateIslamic
-🎐  *Waktu*:  %time
- 
-                    *〔 llı INFO ıll 〕*      
-
-🎐   *Uptime:* %uptime (%muptime)
-🎐   *Database:* %rtotalreg dari %totalreg 
- 
-              *〔 llı INFO COMMAND ıll 〕*     
-
-*Ⓟ* = Premium
-*Ⓛ* = Limit
-
- %readmore`.trimStart(),
-  header: `
-⁙╭━━•›ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━  ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙‹•━━╮
-⁙┃╭┈─────────────⩵꙰ཱི࿐
-⁙┃╰───━⃝┅ *%category* ┅⃝━───ꕥ ↶↷*
-⁙├☆─〔 HAORI CHAN 〕──┈➤`,
-  body: `⁙├〲 %cmd %islimit %isPremium`,
-  footer: `⁙╰•──────━⃝┅⃝━─────┈ ⳹`,
+  before: `
+┌─〔 %me 〕
+├ *${ucapan()} %name*
+│
+├ Tersisa *%limit Limit*
+├ Role *%role*
+├ Level *%level (%exp / %maxexp)* [%xp4levelup]
+├ %totalexp XP secara Total
+│
+├ Tanggal: *%week %weton, %date*
+├ Tanggal Islam: *%dateIslamic*
+├ Waktu: *%time*
+│
+├ Uptime: *%uptime (%muptime)*
+├ Database: %rtotalreg dari %totalreg
+├ Github:
+├ %github
+│
+├ Note :
+├ *Ⓟ* = Premium
+├ *Ⓛ* = Limit
+└────
+%readmore`.trim(),
+  header: '┌─〔 %category 〕',
+  body: '├ %cmd %islimit %isPremium',
+  footer: '└────\n',
   after: `
-⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❙❘❙❙❘❙❘❙❚❙❘❙❙❙❘❙❘❙❚❙❘❙❚❙❘❙❙❘❙❚❙❘ ⌕.
+*%npmname@^%version*
+${'```%npmdesc```'}
 `,
 }
- let handler = async (m, { conn, usedPrefix: _p, args, command }) => { 
-  let bzz = './haori.mp3'
-  let tag = `@${m.sender.split('@')[0]}`
- m, { contextInfo: { mentionedJid: conn.parseMention(tag) }}
- let waofc = `@${'0'.split('@')[0]}`
- m, { contextInfo: { mentionedJid: conn.parseMention(tag) }}
- let ow = `@${'6281379927605'.split('@')[0]}`
+let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
+
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
@@ -232,28 +219,8 @@ const defaultMenu = {
         enabled: !plugin.disabled,
       }
     })
-        const ftrol = {
-    key : {
-    remoteJid: 'status@broadcast',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 999,
-    status: 1,
-    surface : 1,
-    message: `廾ΛӨЯI IQ MD 🌱 ┊ 𝗥𝗣𝗚 Whatsapp ʙᴏᴛ`, 
-    orderTitle: `▮Menu ▸`,
-    thumbnail: await (await fetch('https://telegra.ph/file/8450b71563bdbfb85b98d.jpg')).buffer(), //Gambarnye
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-    
     if (teks == '404') {
-    	let tksk = `${ucapan()}, ${name} ${pickRandom(['😅', '🥰', '😜'])}
-
-_${pickRandom(global.motivasi)}_
+      let tksk = `${ucapan()}, @${m.sender.split('@')[0]} ${pickRandom(['😅', '🥰', '😜'])}
     
 ╭──── 「 *BOT INFO* 」 ────┈ ⳹
 │ 
@@ -293,9 +260,9 @@ _${pickRandom(global.motivasi)}_
 
 let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner`
              let judul = `${ucapan()}`.trim() 
-       const sections = [ 
-       { 
-         title: 'List Menu Haoribotz ', 
+      const sections = [
+      {
+        title: 'List Menu Haoribotz ', 
          rows: [ 
            { title: '💬 ꒱「  ❖ Semua Perintah ⤸ 」',  description: 'Menampilkan semua fitur dari bot', rowId: '.? all' }, 
            { title: '🎮 ꒱「  ❖ Game ⤸ 」', description: 'Menampilkan fitur dari game', rowId: '.? game' }, 
@@ -317,156 +284,140 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
            { title: '☪️ ꒱「  ❖ Islamic ⤸ 」', description: 'Menampilkan fitur dari quran', rowId: '.? quran' }, 
            { title: '🎙️ ꒱「  ❖ Voice Changer ⤸ 」', description: 'Menampilkan fitur dari pengubah suara', rowId: '.? audio' }, 
            { title: '🎧 ꒱「  ❖ Vn Imuet ⤸ 」', description: 'Menampilkan fitur dari vn',  rowId: '.? vn' }, 
-           { title: '🎵 ꒱「  ❖ Sound Music ⤸ 」', description: 'Menampilkan fitur dari sound',  rowId: '.? sound' }, 
-           { title: '🤖 ꒱「  ❖ Jadibot ⤸ 」', description: 'Menampilkan fitur dari jadibot',  rowId: '.? jadibot' }, 
+           { title: '🎵 ꒱「  ❖ Sound Music ⤸ 」', description: 'Menampilkan fitur dari sound',  rowId: '.? sound' },
            { title: 'ℹ️ ꒱「  ❖ Info ⤸ 」', description: 'Menampilkan fitur dari info', rowId: '.? info'}, 
            { title: '❓ ꒱「  ❖ No Category ⤸ 」', description: 'Menampilkan fitur dari tanpakategori', rowId: '.? tanpakategori' }, 
            { title: '👩🏻‍💻 ꒱「  ❖ Owner ⤸ 」', description: 'Menampilkan fitur dari owner', rowId: '.? owner' }, 
          ] 
        } 
      ] 
-     const listMessage = { 
-       text: `Hai Kak ${name}, Pilih Menu Disini Kak`, 
+    const listMessage = {
+      text: `Hai Kak ${name}, Pilih Menu Disini Kak`, 
        footer: 'Jangan Lupa Donasi Ya Kak',
-       title: judul, 
-       buttonText: "Klik Disini", 
-       sections 
-     } 
- conn.send2ButtonLoc(m.chat, await (await fetch('https://telegra.ph/file/334d224de652b009d82e8.jpg')).buffer(), tksk, ftt, 'OWNER', '.owner', 'DONASI', '.donasi', m, { contextInfo: { mentionedJid: conn.parseMention(tksk)}})
-     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }}) 
-      
-     } 
-     let groups = {} 
-     for (let tag in tags) { 
-       groups[tag] = [] 
-       for (let plugin of help) 
-         if (plugin.tags && plugin.tags.includes(tag)) 
-           if (plugin.help) groups[tag].push(plugin) 
-     } 
-     conn.menu = conn.menu ? conn.menu : {} 
-     let before = conn.menu.before || defaultMenu.before 
-     let header = conn.menu.header || defaultMenu.header 
-     let body = conn.menu.body || defaultMenu.body 
-     let footer = conn.menu.footer || defaultMenu.footer 
-     let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Dipersembahkan oleh https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after 
-     let _text = [ 
-       before, 
-       ...Object.keys(tags).map(tag => { 
-         return header.replace(/%category/g, tags[tag]) + '\n' + [ 
-           ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => { 
-             return menu.help.map(help => { 
-               return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help) 
-                 .replace(/%islimit/g, menu.limit ? ' *Ⓛ* ' : '') 
-                 .replace(/%isPremium/g, menu.premium ? ' *Ⓟ* ' : '') 
-                 .trim() 
-             }).join('\n') 
-           }), 
-           footer 
-         ].join('\n') 
-       }), 
-       after 
-     ].join('\n') 
-     text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : '' 
-     let replace = { 
-       '%': '%', 
-       p: _p, uptime, muptime, 
-       me: conn.user.name, 
-       npmname: package.name, 
-       npmdesc: package.description, 
-       version: package.version, 
-       exp: exp - min, 
-       maxexp: xp, 
-       totalexp: exp, 
-       xp4levelup: max - exp <= 0 ? `Siap untuk *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`, 
-       github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]', 
-       level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role, 
-       readmore: readMore 
-     } 
-     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name]) 
-     await conn.sendButtonDoc(m.chat, text.trim(),  '                          「 *カ HAORI BOT IQ MD あ⁩* 」', 'OWNER', '.owner', m, { quoted: m, contextInfo: { 
-         externalAdReply: { 
-             title: 'Haori Suka Furry UωU',
-             body: `${pickRandom(['Furry Indonesia :3', 'Suka Pokemon Nggak Kak :3', 'Kangen Haori Nggak?', 'Udah makan belum kak?', 'Udah Makan Belum?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'Jangan spam ya kak!', 'Jangan lupa donasi yak kak! QωQ', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! UωU', 'Haori Sayang Kamu :3', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`,
-             description: 'Now Playing...', 
-             mediaType: 2, 
-           thumbnail: await (await fetch('https://telegra.ph/file/1f8e012df6e4aca2fbd11.jpg')).buffer(), 
-          mediaUrl: `${pickRandom([`https://youtu.be/35w7z9QFLwY`, `https://www.instagram.com/the.sad.boy01`])}`,
-         } 
-      } 
-   })
-   conn.sendFile(m.chat, bzz, 'haori.mp3', null, m, true, {
-type: 'audioMessage', // paksa tanpa convert di ffmpeg
-ptt: true, contextInfo:{externalAdReply: {title: '𝙷𝙰𝙾𝚁𝙸𝙱𝙾𝚃𝚉 𝚂𝙴𝙽𝙶𝙾𝙻 𝙳𝙾𝙽𝙶 :v', body: `${pickRandom(['Simple Bot WhatsApp', 'Create By Zivfurr', 'Furry Botz By Zivfurr'])}`, sourceUrl: 'https://bit.ly/3N024o9', thumbnail: await (await fetch('https://telegra.ph/file/8501db84d6e15b55c6273.jpg')).buffer(),}} 
-     }) 
-   } catch (e) { 
-     conn.reply(m.chat, 'Maaf, menu sedang error', m) 
-     throw e 
-   } 
- } 
- handler.help = ['simplemenu']
+      buttonText: "Klik Disini",
+      sections
+    }
+     conn.send2ButtonLoc(m.chat, await (await fetch('https://telegra.ph/file/334d224de652b009d82e8.jpg')).buffer(), tksk, ftt, 'OWNER', '.owner', 'DONASI', '.donasi', m, { contextInfo: { mentionedJid: conn.parseMention(tksk)}})
+    return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
+    
+    }
+
+    let groups = {}
+    for (let tag in tags) {
+      groups[tag] = []
+      for (let plugin of help)
+        if (plugin.tags && plugin.tags.includes(tag))
+          if (plugin.help) groups[tag].push(plugin)
+    }
+    conn.menu = conn.menu ? conn.menu : {}
+    let before = conn.menu.before || defaultMenu.before
+    let header = conn.menu.header || defaultMenu.header
+    let body = conn.menu.body || defaultMenu.body
+    let footer = conn.menu.footer || defaultMenu.footer
+    let after = conn.menu.after || (conn.user.jid == global.conn.user.jid ? '' : `Dipersembahkan oleh https://wa.me/${global.conn.user.jid.split`@`[0]}`) + defaultMenu.after
+    let _text = [
+      before,
+      ...Object.keys(tags).map(tag => {
+        return header.replace(/%category/g, tags[tag]) + '\n' + [
+          ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => {
+            return menu.help.map(help => {
+              return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help)
+                .replace(/%islimit/g, menu.limit ? ' *Ⓛ* ' : '')
+                .replace(/%isPremium/g, menu.premium ? ' *Ⓟ* ' : '')
+                .trim()
+            }).join('\n')
+          }),
+          footer
+        ].join('\n')
+      }),
+      after
+    ].join('\n')
+    text = typeof conn.menu == 'string' ? conn.menu : typeof conn.menu == 'object' ? _text : ''
+    let replace = {
+      '%': '%',
+      p: _p, uptime, muptime,
+      me: conn.user.name,
+      npmname: package.name,
+      npmdesc: package.description,
+      version: package.version,
+      exp: exp - min,
+      maxexp: xp,
+      totalexp: exp,
+      xp4levelup: max - exp <= 0 ? `Siap untuk *${_p}levelup*` : `${max - exp} XP lagi untuk levelup`,
+      github: package.homepage ? package.homepage.url || package.homepage : '[unknown github url]',
+      level, limit, name, umur, money, age, weton, week, date, dateIslamic, time, totalreg, rtotalreg, role,
+      readmore: readMore
+    }
+    text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
+    await conn.send3TemplateButtonImg(m.chat, await genProfile(conn, m), text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}donasi`, m)
+  } catch (e) {
+    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    throw e
+  }
+}
+handler.help = ['simplemenu']
 handler.tags = ['main']
 handler.command = /^(simplemenu)$/i
- handler.owner = false 
- handler.mods = false 
- handler.premium = false 
- handler.group = false 
- handler.private = false 
-  
- handler.admin = false 
- handler.botAdmin = false 
-  
- handler.fail = null 
- handler.exp = 3 
-  
- module.exports = handler 
-  
- const more = String.fromCharCode(8206) 
- const readMore = more.repeat(4001) 
-  
- function clockString(ms) { 
-   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) 
-   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60 
-   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60 
-   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':') 
- } 
- function ucapan() {
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
+
+handler.fail = null
+handler.exp = 3
+
+module.exports = handler
+
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
+
+function clockString(ms) {
+  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
+  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
+  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
+  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+}
+function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Good Morning 🌆"
+  res = "Selamat dinihari"
   if (time >= 4) {
-    res = "Good Morning 🌄"
+    res = "Selamat pagi"
   }
   if (time > 10) {
-    res = "Good Afternoon ☀️"
+    res = "Selamat siang"
   }
   if (time >= 15) {
-    res = "Good Evening 🌇"
+    res = "Selamat sore"
   }
   if (time >= 18) {
-    res = "Good Night 🌃"
+    res = "Selamat malam"
   }
   return res
-    }
- function pickRandom(list) {
-  return list[Math.floor(Math.random() * list.length)]
 }
-  
-  async function genProfile(conn, m) { 
-   let font = await jimp.loadFont('./name.fnt'), 
-     mask = await jimp.read('https://i.imgur.com/552kzaW.png'), 
-     welcome = await jimp.read(thumbnailUrl.getRandom()), 
-     avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
-     status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected' 
-  
-     await avatar.resize(460, 460) 
-     await mask.resize(460, 460) 
-     await avatar.mask(mask) 
-     await welcome.resize(welcome.getWidth(), welcome.getHeight()) 
-  
-     await welcome.print(font, 550, 180, 'Name:') 
-     await welcome.print(font, 650, 255, m.pushName.slice(0, 25)) 
-     await welcome.print(font, 550, 340, 'About:') 
-     await welcome.print(font, 650, 415, status) 
-     await welcome.print(font, 550, 500, 'Number:') 
-     await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international')) 
-     return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png') 
- }
+
+//By fahri adison = https://github.com/FahriAdison
+
+ async function genProfile(conn, m) {
+  let font = await jimp.loadFont('./name.fnt'),
+    mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
+    welcome = await jimp.read(thumbnailUrl.getRandom()),
+    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
+    status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected'
+
+    await avatar.resize(460, 460)
+    await mask.resize(460, 460)
+    await avatar.mask(mask)
+    await welcome.resize(welcome.getWidth(), welcome.getHeight())
+
+    await welcome.print(font, 550, 180, 'Name:')
+    await welcome.print(font, 650, 255, m.pushName.slice(0, 25))
+    await welcome.print(font, 550, 340, 'About:')
+    await welcome.print(font, 650, 415, status)
+    await welcome.print(font, 550, 500, 'Number:')
+    await welcome.print(font, 650, 575, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
+    return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png')
+}
