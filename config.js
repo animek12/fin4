@@ -4,8 +4,8 @@ global.mods = JSON.parse(fs.readFileSync('./src/moderator.json')) // Want some h
 global.thumbt = global.img
 global.fsx = 999999999999
 global.kontak = [
-['6285158866902', 'Ziv San', true],
-['6282179137771', 'HAORI IQ-MD', true]
+['6285158866902', 'Ziv San', true], 
+['6282179137771', 'HAORI IQ-MD', true] 
 ]
 global.APIs = { // API Prefix
   // name: 'https://website'
@@ -34,10 +34,10 @@ global.APIKeys = { // APIKey Here
   'https://leyscoders-api.herokuapp.com': 'dappakntlll'
 }
 
+global.linkyt = 'https://youtu.be/60yZO4UQKdI'
 global.WM = '𝑴𝒚𝑩𝒐𝒕-𝑴𝒖𝒍𝒕𝒊 𝑫𝒆𝒗𝒊𝒄𝒆 𝑩𝒚 𝚃𝚑𝚎.𝚂𝚊𝚍.𝙱𝚘𝚢𝟶𝟷'
 global.linkgc = 'https://chat.whatsapp.com/CnQV9lNcHuIENb8SQ9CaYP'
 global.linkig = 'https://www.instagram.com/the.sad.boy01'
-global.linkyt = 'https://youtu.be/60yZO4UQKdI'
 global.deslink = ''
 global.titlink = 'Folllow me on Instagram'
 global.bodlink = '@the.sad.boy01'
@@ -51,7 +51,7 @@ global.urlnya = "https://www.instagram.com/the.sad.boy01"
 
 //============= callButtons ============//
 global.dtc = '𝒄𝒂𝒍𝒍 𝒐𝒘𝒏𝒆𝒓'
-global.phn = ''
+global.phn = '+62 895-3362-82144'
 
 //========== Tampilan Bot =============//
 global.sa = '╭─'
@@ -100,7 +100,7 @@ global.rpg = {
       diamond: '💎',
       common: '📦',
       uncommon: '🎁',
-      mythi '🗳️',
+      mythic: '🗳️',
       legendary: '🗃️',
       pet: '🎁',
       sampah: '🗑',
