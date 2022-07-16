@@ -1,13 +1,20 @@
-let handler = async(m, { conn, usedPrefix, text }) => {
-    let user = global.db.data.users[m.sender]
-    user.afk = + new Date
-    user.afkReason = text
-    conn.sendTemplateButtonDoc(m.chat, img, `
-${conn.getName(m.sender)} sekarang AFK${text ? ': ' + text : ''}
-`, wm, `Menu`, `${usedPrefix}menu`, m)
+let handler = (m, { text }) => {
+  let user = global.db.data.users[m.sender]
+  user.afk = + new Date
+  user.afkReason = text
+  let str = `
+╭─────[ *NOW AFK !* ]──────✧
+┆ *Nama* : ${conn.getName(m.sender)}
+┆ *Alasan* : ${text ? '' + text : ''}
+╰┅────────────────────★
+`.trim()
+conn.sendButton(m.chat, str, wm, 'Jangan Ganggu Ya !', 'iyaaaaa',m)
+conn.reply(str)
 }
-handler.help = ['afk <reason>']
-handler.tags = ['main']
+handler.help = ['afk <alasan>']
+handler.tags = ['group']
 handler.command = /^afk$/i
 
 module.exports = handler
+
+let wm = global.botwm
