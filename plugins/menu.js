@@ -393,7 +393,7 @@ let levelling = require('../lib/levelling')
              }, { 
                "rows": [{ 
                  "title":  `Owner Menu`, 
-                 "description": "Menu Khusus Owner", 
+                 "description": "Menu Khusus Owner Yang Cute", 
                  "rowId": '.? owner'
                }], 
                "title": "Sub-menu ke- 24" 
@@ -406,14 +406,7 @@ let levelling = require('../lib/levelling')
       buttonText: "Pilih Disini",
       sections
     }
-    return conn.sendMessage(m.chat, listMessage, { quoted: fkon, mentions: await conn.parseMention(judul), contextInfo": 
-						{ "stanzaId": m.key.id,
-                        "participant": "0@s.whatsapp.net",
-                        "remoteJid": "120363041791693180@g.us@g.us",
-                        "quotedMessage": m.message
-						}
-                    }
-                 }, {}), {waitForAck: true})
+    return conn.sendMessage(m.chat, listMessage, { quoted: fkon, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
   
