@@ -1,6 +1,6 @@
 { 
-     "name": "Cute-IQ-MD", 
-     "version": "2.2.5", 
+     "name": "Family-MD", 
+     "version": "2.4.0", 
      "description": "Simle Bot WhatsApp with Baileys Multi Device", 
      "depecrated": false, 
      "main": "index.js", 
@@ -11,9 +11,9 @@
      }, 
      "scripts": { 
          "start": "node index.js", 
-         "mongo": "node . --db 'mongodb+srv://Pilardev200:8GxM8ex9JnGXJMzo@Bilek.qnos7.mongodb.net/?retryWrites=true&w=majority'", 
+         "mongo": "node . --db 'isi mongodb mu'", 
          "test": "node test.js", 
-         "test2": "nodemon index.js" 
+         "test2": "nodemon index.js --server --autocleartmp" 
      }, 
      "keywords": [ 
          "termux-whatsapp-bot", 
@@ -22,8 +22,8 @@
          "js-whatsapp", 
          "whatsapp", 
          "mybot-md", 
-         "family-md", 
          "family-bot", 
+         "family-md", 
          "enjela", 
          "shiraori-md", 
          "stikerin", 
@@ -31,7 +31,7 @@
      ], 
      "homepage": "https://github.com/fokusdotid/family-md", 
      "author": { 
-         "name": "By Ziv San" 
+         "name": "Fokus ID" 
      }, 
      "repository": { 
          "type": "git", 
@@ -42,7 +42,7 @@
      }, 
      "license": "GPL-3.0-or-later", 
      "dependencies": { 
-         "@adiwajshing/baileys": "^4.1.0", 
+         "@adiwajshing/baileys": "github:adiwajshing/baileys", 
          "@adiwajshing/keyed-db": "^0.2.4", 
          "@bochilteam/scraper": "^2.0.0", 
          "awesome-phonenumber": "^2.69.0", 
