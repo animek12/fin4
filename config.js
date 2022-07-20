@@ -36,7 +36,7 @@ global.APIKeys = { // APIKey Here
 
 global.linkyt = 'https://youtu.be/60yZO4UQKdI'
 global.WM = '𝑴𝒚𝑩𝒐𝒕-𝑴𝒖𝒍𝒕𝒊 𝑫𝒆𝒗𝒊𝒄𝒆 𝑩𝒚 𝚃𝚑𝚎.𝚂𝚊𝚍.𝙱𝚘𝚢𝟶𝟷'
-global.linkgc = 'https://chat.whatsapp.com/CnQV9lNcHuIENb8SQ9CaYP'
+global.linkgc = 'https://chat.whatsapp.com/Kyz397uqvJZ5AvX7I4BSID'
 global.linkig = 'https://www.instagram.com/the.sad.boy01'
 global.deslink = ''
 global.titlink = 'Folllow me on Instagram'
@@ -46,8 +46,8 @@ global.wait = '_*𝐬𝐞𝐝𝐚𝐧𝐠 𝐝𝐢 𝐩𝐫𝐨𝐬𝐞𝐬 ...*
 global.eror = '_*мααƒ ѕєяνєя тι∂αк ѕтαвιℓ..*_'
 
 //========Url Template Buttons==========//
-global.dtu = '𝑭𝒐𝒍𝒍𝒐𝒘'
-global.urlnya = "https://www.instagram.com/the.sad.boy01"
+global.dtu = '🌏 GROUP OFFICIAL'
+global.urlnya = global.linkgc
 
 //============= callButtons ============//
 global.dtc = '𝒄𝒂𝒍𝒍 𝒐𝒘𝒏𝒆𝒓'
