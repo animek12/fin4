@@ -187,7 +187,7 @@ let levelling = require('../lib/levelling')
    "product": { 
    "productImage":{ 
    "mimetype": "image/jpeg", 
-   "jpegThumbnail": fs.readFileSync('./thumbnail.jpg'), 
+   "jpegThumbnail": await (await fetch('https://telegra.ph/file/8f729fca4c6096d469664.jpg')).buffer(), //Gambarnye
      }, 
    "title": `${ucapan()}`, 
    "description": '𝗧 𝗜 𝗠 𝗘 : ' + wktuwib, 
@@ -200,6 +200,23 @@ let levelling = require('../lib/levelling')
    } 
    } 
    } 
+ const ftroli = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 2022,
+    status: 1,
+    surface : 1,
+    message: `CUTE IQ-MD By Ziv San`, 
+    orderTitle: `▮Menu ▸`,
+    thumbnail: await (await fetch('https://telegra.ph/file/db5b4aed0d6d2e6c10c8f.jpg')).buffer(), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    }
+    }
      let pe = '```' 
      let { premium, premiumTime } = global.db.data.users[m.sender] 
      let _uptime = process.uptime() * 1000 
@@ -227,186 +244,11 @@ let levelling = require('../lib/levelling')
        } 
      }) 
      if (teks == '404') { 
-       let judul = `${ucapan()}`.trim() 
-       const sections = [ 
-             { 
-               "rows": [{ 
-                 "title": `Semua Perintah`, 
-                 "description": "Menu Semua Perintah", 
-                 "rowId": '.? all'
-                 }], 
-               "title": "Sub-menu ke- 1" 
-             }, { 
-               "rows": [{ 
-                 "title": `Play Game`, 
-                 "description": "Menu untuk bermain game dan mendapatkan xp untuk levelup", 
-                 "rowId": '.? game'
-               }], 
-               "title": "Sub-menu ke- 2" 
-             }, { 
-               "rows": [{ 
-                 "title": `Leveling Xp Dan Balance`, 
-                 "description": "Tingkatkan Xp Dan Balance Mu Ya Kak🥰🥰", 
-                 "rowId": '.? xp'
-               }], 
-               "title": "Sub-menu ke- 3" 
-             }, { 
-               "rows": [{ 
-                 "title": `Sticker Editing`, 
-                 "description": "Menu membuat sticker dan lainnya kakak", 
-                 "rowId": '.? stiker'
-               }], 
-               "title": "Sub-menu ke- 4" 
-             }, { 
-               "rows": [{ 
-                 "title": `Weebs Zone`, 
-                 "description": "Some anime, manga, doujinshi stuff & random anime wibu baka >//< ", 
-                 "rowId": '.? anime'
-               }], 
-               "title": "Sub-menu ke- 5" 
-             }, { 
-               "rows": [{ 
-                 "title": `Kerang Ajaib`, 
-                 "description": "Menu jawaban random dari bot, masa gak tau gak pernah nonton spongebob ya?", 
-                 "rowId": '.? kerangajaib'
-               }], 
-               "title": "Sub-menu ke- 6" 
-             }, { 
-               "rows": [{ 
-                 "title": `Quotes`, 
-                 "description": "Menu random quotes & membuat quotes", 
-                 "rowId": '.? quotes'
-               }], 
-               "title": "Sub-menu ke- 7" 
-             }, { 
-               "rows": [{ 
-                 "title": `Admin`, 
-                 "description": "List Fitur Khusus Admin-Group", 
-                 "rowId": '.? admin'
-               }], 
-               "title": "Sub-menu ke- 8" 
-             }, { 
-               "rows": [{ 
-                 "title": `Grup`, 
-                 "description": "List Fitur Khusus Untuk Mengatur Group", 
-                 "rowId": '.? grup'
-               }], 
-               "title": "Sub-menu ke- 9" 
-             }, { 
-               "rows": [{ 
-                 "title": `Upgrade Premium`, 
-                 "description": "Mau Beli Premium Kak? Info Lebih Lanjut, Klik Ini", 
-                 "rowId": '.? premium'
-               }], 
-               "title": "Sub-menu ke- 10" 
-             }, { 
-               "rows": [{ 
-                 "title": `Internet`, 
-                 "description": "Menu untuk menjelajahi Internet...", 
-                 "rowId": '.? internet'
-               }], 
-               "title": "Sub-menu ke- 11" 
-             }, { 
-               "rows": [{ 
-                 "title": `Anonymous Chat`, 
-                 "description": "Menu untuk bermain anonymous chat versi whatsapp", 
-                 "rowId": '.? anonymous'
-               }], 
-               "title": "Sub-menu ke- 12" 
-             }, { 
-               "rows": [{ 
-                 "title": `Nulis & Logo`, 
-                 "description": "Menu untuk Nulis & Logo", 
-                 "rowId": '.? nulis'
-               }], 
-               "title": "Sub-menu ke- 13" 
-             }, { 
-               "rows": [{ 
-                 "title": `Downloader`, 
-                 "description": "Kalo Mau Unduh Sesuatu Bisa Di Sini", 
-                 "rowId": '.? downloader'
-               }], 
-               "title": "Sub-menu ke- 14" 
-             }, { 
-               "rows":[{ 
-                 "title": `Tools`, 
-                 "description": "Mungkin bisa membantumu", 
-                 "rowId": '.? tools'
-               }], 
-               "title": "Sub-menu ke- 15" 
-             }, { 
-               "rows": [{ 
-                 "title": `Fun Features`, 
-                 "description": "Fitur Bot Yang Bisa Dipake Buat Happy-an", 
-                 "rowId": '.? fun'
-               }], 
-               "title": "Sub-menu ke- 16" 
-             }, { 
-               "rows": [{ 
-                 "title": `Database`, 
-                 "description": "Menu untuk Database", 
-                 "rowId": '.? database'
-               }], 
-               "title": "Sub-menu ke- 17" 
-             }, { 
-               "rows": [{ 
-                 "title": `Vote & Absen`, 
-                 "description": "Menu untuk Vote & Absen", 
-                 "rowId": '.? vote'
-               }], 
-               "title": "Sub-menu ke- 18" 
-             }, { 
-               "rows": [{ 
-                 "title": `Islamic`, 
-                 "description": "Menu agama islam, tetap jaga toleransi beragama ya kak 🥰", 
-                 "rowId": '.? quran'
-               }], 
-               "title": "Sub-menu ke- 19" 
-             }, { 
-               "rows": [{ 
-                 "title": `Pengubah Suara`, 
-                 "description": "Menu pengubah suara audio atau convert audio", 
-                 "rowId": '.? audio'
-               }], 
-               "title": "Sub-menu ke- 20" 
-             }, { 
-               "rows": [{ 
-                 "title":  `Jadi Bot`, 
-                 "description": "Masih Belum Ada Mau Di Kembangkan", 
-                 "rowId": '.? jadibot'
-               }], 
-               "title": "Sub-menu ke- 21" 
-             }, { 
-               "rows": [{ 
-                 "title": `Info`, 
-                 "description": "Menu info seperti pemilik bot dan source code bot", 
-                 "rowId": '.? info'
-               }], 
-               "title": "Sub-menu ke- 22" 
-             }, { 
-               "rows": [{ 
-                 "title": `Tanpa Kategori`, 
-                 "description": "Fitur Nggak Tau Guna Nya Apa", 
-                 "rowId": '.? tanpakategori'
-               }], 
-               "title": "Sub-menu ke- 23" 
-             }, { 
-               "rows": [{ 
-                 "title":  `Owner Menu`, 
-                 "description": "Menu Khusus Owner Yang Cute", 
-                 "rowId": '.? owner'
-               }], 
-               "title": "Sub-menu ke- 24" 
-             } 
-           ] 
-    const listMessage = {
-      text: `Hai Kak ${name} Pilih Menu Dibawah Ini Yah Kak`,
-      footer: '© Cute IQ-MD By Ziv San',
-      title: judul,
-      buttonText: "Pilih Disini",
-      sections
-    }
-    return conn.sendMessage(m.chat, listMessage, { quoted: fkon, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
+ 	let cute = `${pickRandom(['https://telegra.ph/file/c73c244110a08fa9cd13e.jpg', 'https://telegra.ph/file/9804bc655802176df78b7.jpg', 'https://telegra.ph/file/c792a57757e98d8a05d6c.jpg', 'https://telegra.ph/file/cc20168b2a425494eaea3.jpg', 'https://telegra.ph/file/6aad9eb11613febad6440.jpg'])}` 
+ 	let ori = `Hi Kak, @${m.sender.split`@`[0]}
+ 
+Saya Adalah Cute Bot Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah Sesuatu Seperti Membuat Sticker Dan Lainnya, Kalo Kamu Mau Request Fitur Silahkan Ketik #request Pesan Atau Fitur Yang Kamu Inginkan!`
+return conn.send2ButtonLoc(m.chat, cute, ori, 'Note : Jika Kamu Menggunakan Wa Lama Atau Wa Mod, Dan Button Tidak Keliatan, Langsung Aja Ketik .allmenu', 'COMMAND', '.simplemenu', 'DONASI', '.donasi', m)
     
     }
   
