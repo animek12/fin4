@@ -244,11 +244,11 @@ let levelling = require('../lib/levelling')
        } 
      }) 
      if (teks == '404') { 
- 	let cute = `${pickRandom(['https://telegra.ph/file/c73c244110a08fa9cd13e.jpg', 'https://telegra.ph/file/9804bc655802176df78b7.jpg', 'https://telegra.ph/file/c792a57757e98d8a05d6c.jpg', 'https://telegra.ph/file/cc20168b2a425494eaea3.jpg', 'https://telegra.ph/file/6aad9eb11613febad6440.jpg'])}` 
+ 	let cute = `${pickRandom(['https://telegra.ph/file/6999d6a56326852484746.jpg', 'https://telegra.ph/file/5df66151d217bb5cd1627.jpg', 'https://telegra.ph/file/c71a6b41795ab649daef7.jpg', 'https://telegra.ph/file/c9a695262426ed4e8b3b8.jpg'])}` 
  	let ori = `Hi Kak, @${m.sender.split`@`[0]}
  
 Saya Adalah Cute Bot Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah Sesuatu Seperti Membuat Sticker Dan Lainnya, Kalo Kamu Mau Request Fitur Silahkan Ketik #request Pesan Atau Fitur Yang Kamu Inginkan!`
-return conn.send2ButtonLoc(m.chat, cute, ori, 'Note : Jika Kamu Menggunakan Wa Lama Atau Wa Mod, Dan Button Tidak Keliatan, Langsung Aja Ketik .allmenu', 'COMMAND', '.simplemenu', 'DONASI', '.donasi', m)
+return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod And Button It Doesn't Look Di Rectly Type ${_p}allmenu Or ${_p}simplemenu`, 'COMMAND', '.simplemenu', 'DONASI', '.donasi', m)
     
     }
   
