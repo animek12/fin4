@@ -200,6 +200,23 @@ let levelling = require('../lib/levelling')
    } 
    } 
    } 
+ const fload = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 999,
+    status: 1,
+    surface : 1,
+    message: '[❗] Memuat Menu ' + teks + '...',
+    orderTitle: `▮Menu ▸`,
+    thumbnail: await (await fetch('https://telegra.ph/file/e6c498c568fd8d35f9395.jpg')).buffer(), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    }
+    }
  const ftroli = {
     key : {
     remoteJid: 'status@broadcast',
@@ -299,7 +316,8 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
        readmore: readMore 
      } 
      text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name]) 
-     await conn.send2ButtonImg(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), hao, 'Donasi', '.donasi', 'Rules', '.rules', m, { 
+     await conn.reply(m.chat, '*L o a d i n g . . .*', fload) 
+    await conn.send2ButtonImg(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), hao, 'Donasi', '.donasi', 'Rules', '.rules', m, { 
      quoted: ftoko, 
      contextInfo: { forwardingScore: 99999, isForwarded: true, 
          externalAdReply: { 
