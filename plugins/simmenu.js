@@ -232,43 +232,46 @@ let levelling = require('../lib/levelling')
     }
     }
      if (teks == '404') { 
- 	let tksk = `${ucapan()}, @${m.sender.split`@`[0]} ${pickRandom(['😅', '🥰', '😜'])}
-╭━━━━━━━━━━━━━━━━┈ ❋ཻུ۪۪⸙
-│      「 *BOT INFO* 」 
-└┬────────────┈ ⳹
-┌┤❒͡ *Bot Name: HAORI IQ MD*
-││❒͡ *Creator: Stah Ziv San*
-││❒͡ *Contact Owner Bot*
-││ *http://wa.me/16199961931*
-││❒͡ *Tanggal: 9 Juli 2022*  
-││❒͡ *Jam: ${time} WIB*
-││❒͡ *Status: 「 ${mode} 」*
-││❒͡ *Prefix: 「 MULTI PREFIX 」*
-││❒͡  𝙏𝘼𝙃𝙐𝙉 𝘽𝘼𝙍𝙐
-││ _*${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik*_
-││❒͡  𝙍𝘼𝙈𝘼𝘿𝘼𝙉
-││ _*${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik*_ 
-││❒͡  𝙐𝙇𝘼𝙉𝙂 𝙏𝘼𝙃𝙐𝙉 𝙊𝙒𝙉𝙀𝙍 
-││ _*${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik*_
-│└─── 「 *CUTE BOT* 」 ────┈ ⳹
-│
-│
-╰─────────────────────❉  
+ 	let tksk = `${pe}${ucapan()}, @${m.sender.split`@`[0]} ${pickRandom(['😅', '🥰', '😜'])}${pe}
+
+●────━───༺༻───━────●
+                *《 BOT INFO 》*
+⚘ *Bot Name: HAORI IQ MD*
+⚘ *Creator: Stah Ziv San*
+⚘ *Contact Owner Bot*
+*http://wa.me/16199961931*
+⚘ *Tanggal: 9 Juli 2022*  
+⚘ *Jam: ${time} WIB*
+⚘ *Status: 「 ${mode} 」*
+⚘ *Prefix: 「 MULTI PREFIX 」*
+
+●────━───༺༻───━────●
+           *《 INFO WAKTU 》*
+✧ 𝙏𝘼𝙃𝙐𝙉 𝘽𝘼𝙍𝙐
+_*${jhari} Hari ${jjam} Jam ${mmmenit} Menit ${ddetik} Detik*_
+✧ 𝙍𝘼𝙈𝘼𝘿𝘼𝙉
+_*${harii} Hari ${jamm} Jam ${menitt} Menit ${detikk} Detik*_ 
+✧ 𝙐𝙇𝘼𝙉𝙂 𝙏𝘼𝙃𝙐𝙉 𝙊𝙒𝙉𝙀𝙍 
+_*${ohari} Hari ${ojam} Jam ${onet} Menit ${detek} Detik*_
+●────━───༺༻───━────●
+
+❉───────────────────❉
+               *《 USER INFO 》*
 ◦ *Nama: ${name}*
 ◦ *Status :* ${premium ? 'Premium' : 'Free'} User
 ◦ *Limit: ${limit}*
 ◦ *Your Api:* wa.me/${m.sender.split('@')[0]}
-❉────────────────────❉  
-*Your Progress*:
+
+             *《 YOUR PROGRESS 》*
 ◦ *Level: ${level}*
 ◦ *XP: ${exp}*
 ◦ *Rank: ${role}*
-❉────────────────────❉  
 
-*⟣┈───「 BOT STATUS 」 ───┈⟢*
+●────━───༺༻───━────●
+             *《 BOT STATUS 》*
 ❏ *Runtime ${uptime}*
 𒍮 *User Register: ${totalreg}*
-*⟣┈───「 CUTE BOT 」 ────┈⟢*`
+●────━───༺༻───━────●`
 
 let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner
 
@@ -453,7 +456,7 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
       buttonText: "Pilih Disini",
       sections
     }
-     await conn.send2ButtonLoc(m.chat, 'https://telegra.ph/file/26e9f980da838c93db37c.jpg', tksk, ftt, 'Menu', '.menu', 'Owner', '.owner', m)
+     await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/26e9f980da838c93db37c.jpg', tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
     return conn.sendMessage(m.chat, listMessage, { quoted: ftroli, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
