@@ -456,7 +456,7 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
       buttonText: "Pilih Disini",
       sections
     }
-     await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/26e9f980da838c93db37c.jpg', tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
+     await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/b5df12c553f94303cc22a.jpg', tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
     return conn.sendMessage(m.chat, listMessage, { quoted: ftroli, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
