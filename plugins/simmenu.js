@@ -438,15 +438,22 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
                  "title": `Tanpa Kategori`, 
                  "description": "Fitur Nggak Tau Guna Nya Apa", 
                  "rowId": '.? tanpakategori'
-               }], 
+              }], 
                "title": "Sub-menu ke- 23" 
+             }, { 
+               "rows": [{ 
+                 "title": `Asupan`, 
+                 "description": "Asupan Cacan & Cogan", 
+                 "rowId": '.? asupan'
+               }], 
+               "title": "Sub-menu ke- 24" 
              }, { 
                "rows": [{ 
                  "title":  `Owner Menu`, 
                  "description": "Menu Khusus Owner Yang Cute", 
                  "rowId": '.? owner'
                }], 
-               "title": "Sub-menu ke- 24" 
+               "title": "Sub-menu ke- 25" 
              } 
            ] 
     const listMessage = {
