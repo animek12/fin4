@@ -11,6 +11,7 @@ conn.sendFile(m.chat, json.result.male, 'ppcowo.png', 'Cowok', m, false,{ contex
 
 conn.sendFile(m.chat, json.result.female, 'ppcewe.png', 'Cewek', m,false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 
+conn.sendButton(m.chat, 'Klik Button Di Bawah Untuk Dapat Kan Foto Nya', '© Ziv San', 'Get Again', '.ppcp', m)
 }
 handler.help = ['ppcouple', 'ppcp']
 handler.tags = ['internet', 'anime']
