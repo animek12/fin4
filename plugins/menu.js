@@ -7,116 +7,148 @@ let levelling = require('../lib/levelling')
  let PhoneNumber = require('awesome-phonenumber') 
  const defaultMenu = { 
    before: ``.trim(),
-  header: '┌───━⃝┅❲ *%category* ❳┅⃝━───ꕥ ',
+  header: '┌•──「 *%category* 」',
   body: '│✎ %cmd %islimit %isPremium',
-  footer: '╰•──────────────────┈ ⳹\n',
+  footer: '╰•──────────────┈ ⳹\n',
   after: ``,
 }
  let handler = async (m, { conn, usedPrefix: _p, args, command }) => { 
   
    let tags 
    let teks = `${args[0]}`.toLowerCase() 
-   let arrayMenu = ['all', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner'] 
-   if (!arrayMenu.includes(teks)) teks = '404' 
+   let array = ['all', 'absen', 'rpg', 'anime', 'downloader', 'game', 'fun', 'xp', 'github', 'group', 'image', 'quotes', 'admin', 'info', 'internet', 'islam', 'kerang', 'maker', 'owner', 'suara', 'premium', 'quotes', 'info', 'stalk', 'shortlink', 'sticker', 'tools', 'text', 'nsfw', 'asupan', 'random', 'textpro', 'photooxy'] 
+   if (!array.includes(teks)) teks = '404' 
    if (teks == 'all') tags = { 
-     'main': 'UTAMA', 
-     'game': 'Game', 
-     'rpg': 'RPG', 
-     'xp': 'Exp & Limit', 
-     'sticker': 'Stiker', 
-     'kerang': 'Kerang Ajaib', 
-     'quotes': 'Quotes', 
-     'group': 'Grup', 
-     'premium': 'Premium', 
-     'internet': 'Internet', 
-     'anonymous': 'Anonymous Chat', 
-     'nulis': 'MagerNulis & Logo', 
-     'downloader': 'Downloader', 
-     'tools': 'Tools', 
-     'fun': 'Fun', 
-     'database': 'Database', 
-     'vote': 'Voting', 
-     'absen': 'Absen', 
-     'quran': 'Al Qur\'an', 
-     'audio': 'Pengubah Suara', 
-     'jadibot': 'Jadi Bot', 
-     'info': 'Info', 
-     '': 'Tanpa Kategori', 
+   'main': 'UTAMA', 
+   'advanced': 'ADVANCED', 
+   'absen': 'ABSEN', 
+   'anime': 'ANIME', 
+   'sticker': 'CONVERT', 
+   'downloader': 'DOWNLOADER', 
+   'xp': 'EXP', 
+   'fun': 'FUN', 
+   'game': 'GAME', 
+   'github': 'GITHUB', 
+   'group': 'GROUP', 
+   'image': 'IMAGE', 
+   'info': 'INFO', 
+   'internet': 'INTERNET', 
+   'islam': 'ISLAMI', 
+   'kerang': 'KERANG', 
+   'maker': 'MAKER', 
+   'owner': 'OWNER', 
+   'Pengubah Suara': 'PENGUBAH SUARA', 
+   'premium': 'PREMIUM ', 
+   'quotes': 'QUOTES', 
+   'rpg': 'RPG', 
+   'stalk': 'STALK', 
+   'shortlink': 'SHORT LINK', 
+   'tools': 'TOOLS', 
+   'vote': 'VOTING', 
+   'nsfw': 'NSFW ',  
+   'asupan': 'ASUPAN ',  
+   'random': 'RANDOM ',  
+   'textpro': 'TEXT PRO ',  
+   'photooxy': 'PHOTO OXY ',  
    } 
-   if (teks == 'game') tags = { 
-     'game': 'Game' 
+   if (teks == 'absen') tags = { 
+     'absen': 'ABSEN', 
+     'vote': 'VOTING', 
    } 
-   if (teks == 'xp') tags = { 
-     'xp': 'Exp & Limit' 
+   if (teks == 'anime') tags = { 
+   'anime': 'ANIME', 
    } 
-   if (teks == 'rpg') tags = { 
-     'rpg': 'RPG' 
-   } 
-   if (teks == 'stiker') tags = { 
-     'sticker': 'Stiker' 
-   } 
-   if (teks == 'kerangajaib') tags = { 
-     'kerang': 'Kerang Ajaib' 
-   } 
-   if (teks == 'quotes') tags = { 
-     'quotes': 'Quotes' 
-   } 
-   if (teks == 'grup') tags = { 
-     'group': 'Grup' 
-   } 
-   if (teks == 'premium') tags = { 
-     'premium': 'Premium' 
-   } 
-   if (teks == 'internet') tags = { 
-     'internet': 'Internet' 
-   } 
-   if (teks == 'anonymous') tags = { 
-     'anonymous': 'Anonymous Chat' 
-   } 
-   if (teks == 'nulis') tags = { 
-     'nulis': 'MagerNulis & Logo' 
+   if (teks == 'sticker') tags = { 
+   'sticker': 'CONVERT', 
    } 
    if (teks == 'downloader') tags = { 
-     'downloader': 'Downloader' 
+   'downloader': 'DOWNLOADER', 
    } 
-   if (teks == 'tools') tags = { 
-     'tools': 'Tools' 
+   if (teks == 'xp') tags = { 
+   'xp': 'EXP', 
    } 
    if (teks == 'fun') tags = { 
-     'fun': 'Fun' 
+   'fun': 'FUN', 
    } 
-   if (teks == 'database') tags = { 
-     'database': 'Database' 
+   if (teks == 'game') tags = { 
+   'game': 'GAME', 
    } 
-   if (teks == 'vote') tags = { 
-     'vote': 'Voting', 
-     'absen': 'Absen' 
+   if (teks == 'github') tags = { 
+   'github': 'GITHUB', 
    } 
-   if (teks == 'quran') tags = { 
-     'quran': 'Al Qur\'an' 
+   if (teks == 'group') tags = { 
+   'group': 'GROUP', 
    } 
-   if (teks == 'audio') tags = { 
-     'audio': 'Pengubah Suara' 
-   } 
-   if (teks == 'jadibot') tags = { 
-     'jadibot': 'Jadi Bot' 
+   if (teks == 'image') tags = { 
+   'image': 'IMAGE', 
    } 
    if (teks == 'info') tags = { 
-     'info': 'Info' 
+   'info': 'INFO', 
    } 
-   if (teks == 'tanpakategori') tags = { 
-     '': 'Tanpa Kategori' 
+   if (teks == 'internet') tags = { 
+   'internet': 'INTERNET', 
+   } 
+   if (teks == 'islam') tags = { 
+   'islam': 'ISLAMI', 
+   } 
+   if (teks == 'kerang') tags = { 
+   'kerang': 'KERANG', 
+   } 
+   if (teks == 'maker') tags = { 
+   'maker': 'MAKER', 
    } 
    if (teks == 'owner') tags = { 
      'owner': 'Owner', 
      'host': 'Host', 
      'advanced': 'Advanced' 
    } 
+   if (teks == 'suara') tags = { 
+   'Pengubah Suara': 'PENGUBAH SUARA', 
+   } 
+   if (teks == 'text') tags = { 
+   'text': 'MAKER TEXT', 
+   } 
+   if (teks == 'premium') tags = { 
+   'premium': 'PREMIUM ', 
+   } 
+   if (teks == 'quotes') tags = { 
+   'quotes': 'QUOTES', 
+   } 
+   if (teks == 'rpg') tags = { 
+   'rpg': 'RPG', 
+   } 
+   if (teks == 'stalk') tags = { 
+   'stalk': 'STALK', 
+   } 
+   if (teks == 'shortlink') tags = { 
+   'shortlink': 'SHORT LINK', 
+   } 
+   if (teks == 'tools') tags = { 
+   'tools': 'TOOLS', 
+   } 
+   if (teks == 'nsfw') tags = { 
+   'nsfw': 'NSFW ',  
+   } 
+   if (teks == 'asupan') tags = { 
+   'asupan': 'ASUPAN ',  
+   } 
+   if (teks == 'random') tags = { 
+   'random': 'RANDOM ',  
+   } 
+   if (teks == 'textpro') tags = { 
+   'textpro': 'TEXT PRO ',  
+   } 
+   if (teks == 'photooxy') tags = { 
+   'photooxy': 'PHOTO OXY ',  
+   }
+  
+  
   
   
   
    try { 
-           let hao = ` 
+           let hao = `Ⓟ = for premium users.\nⓁ = fitur berlimit.
+ 
  *Official Bot By @${'0'.split('@')[0]}* 
  *Powered By @${'16199961931'.split('@')[0]}*` 
      let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}')) 
@@ -289,8 +321,8 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
            ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => { 
              return menu.help.map(help => { 
                return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help) 
-                 .replace(/%islimit/g, menu.limit ? ' *Ⓛ* ' : '') 
-                 .replace(/%isPremium/g, menu.premium ? ' *Ⓟ* ' : '') 
+                 .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '') 
+                 .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '') 
                  .trim() 
              }).join('\n') 
            }), 
