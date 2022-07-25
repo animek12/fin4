@@ -15,16 +15,27 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
   user.regTime = + new Date
   user.registered = true
   let prefix = usedPrefix
+  let totalreg = Object.keys(global.db.data.users).length
   let sn = createHash('md5').update(m.sender).digest('hex')
   conn.sendButton(m.chat, `
-┌─「 *daftar berhasil* 」
-├ nama: ${name}
-├ umur: ${age}
-└────  
+◪ *「 DAFTAR BERHASIL 」*
+╰───────────────────╮
+╭───────────────────╯
+├❏ Nama : ${name}
+├❏ Umur : ${age} tahun
+├❒ Total User : ${totalreg} nomor
+╰───────────────────
 
 *SN* (Serial Number) di kirim di chat pribadi dan digunakan untuk daftar ulang, jika lupa *SN* silahkan ketik *${usedPrefix}sn* untuk mengecek *SN* kamu! 
 `.trim(), wm, `Profile`,`${prefix}pp`, m) 
-conn.sendMessage(m.sender, {text: `*SN:* ${sn}`}, m)
+conn.sendButtonLoc(m.sender, 'https://telegra.ph/file/cdf7e73f51d11643aac4e.jpg', `Ini Berguna Untuk Unregister, Simpan Dengan Baik Sn Untuk Menjaga Data Pribadi Anda
+
+*ID* : ${pickRandom(['GGA0QH119J1','JPA017P02HA1','PWJROSAIEJ','LAOFOODJQ','PWJFCIFIF','QBBVAODEPZ','QPWEJDNDJD','IQPQBAHSIF','UWUWIWOKPF','PQJDXBXB','AKSJALPQDN','HALAKDILQU','IAIIWIICCIS','KQPSNWO','BSBANSKA','JANSNDKSOS','JDKALDKKAPPPP','12OJB0IHBV390','PWWJ017027GA14','19QPDKALLH61J','PWJSJDDUYSYSHSU','1001UQOXJ9JJDY','PQPSODUE107','BBBAKZOOX','00071','WKESOAKWLA','104JALOA9','OSBDOSODO','PWODJDOSKFJSOO','OWJCKEOS','PAJDISO','OSJDOWO','BABAOALKS','PWKW827LA9PA0','PWOEOOOJF','LCKDI2027H393P','IWUEUJEDGWEUEUE','WJA0I2845KN','HAGFUUXUQP3','P0000009769767T0O87Y5','0TT9I4UO43','P7YYRE8583E6','NZNSJEO','P8Y4W38P0R','P8R6IOP4EU-HG0','0729OWRU','APP1MJ90038SJ','98JHEB072NO9','BbL016JJQBCSr54OwwW0','BbJdQ0X37ohL016HhqK','BbJdQ0X37ohL016HhqK','GgGddSsssss1039','HAOSOWODJSO','BVjd173k6BEk','AEOKKAKSKKAK20468','BBWUK017KASK','QMB09R4K8SJ','1238PBLLWO20','KODE123','jajsoskskskOOoO0292','GAGHWPPWSIJ','PWEUPiwpepwp02928','000000723','QPWOEJSJAL','BBAHUSQPEI','HHGGGAGAGODPF','PUS1383PW0292838','HHHB203828LALJK','FFAFUAFAGGAFAFOWVA','PWKDIAPDHZOA','QPWOEUDMZ','103838PW02XLAK','AWOAOAKSPAJDOA','bbbaoduwuslp','kawpajeif','1037pWjs0273BBNjK1','Or4nGB3g04N71nk','Hhhhhhhpwishahhhh','Paosjsh102','Vvvavahsi239hOwpP','PAH103891','RAPEHAL028473','0193910392','103892928','0293829293','02838292','WPPPJSUEUND','01387482923828','gqlI000iwhBYYj0239','DGAOOW','PWOEUDOAO','B0OHF7864IJN','OWRHWOKDIRE','BXKKWCOEDMJCIE','BBDGWOPDDMEO','148920392949202','WOEIOWEOO','19388292929383','MODARSIAHANJINK','BEBEOAODAPJ','LVOWOWIEPADH','GD0KNT3387N20','JUSTSKOSAO','PW2039LSHDOW','BVOVOVOVUUDEUA307','027492838','01398293','TAPIUPITKAOE103982','019382939','02848292838','OWOWOWOJDJADJLA019','PE023802794949nbK','owjfLjsoKhIOauwo','JKlskeoKJJTRYOJc','IHUOFEtUKPJVD302','HJPgFTIBDTI','029292848','IgwoekdkdomsB','HJOKJYYUlns','INNSAPTAILOEAJD','TAIANJSGSIAOPA','0238829103','02838385842111','9372893739991','BACHEUADL','RC047','BRAINTLUBA0284','DDDDDDDSALDKOE1048','11020393910101010201047GbkL','BrADIopaSLyeYA','JSJDJAKDSKLLLLAPRO','S1A4DTKI0087U','47492837','923772','BACHELAOF','1038828282','VAKDPOESMAQ0079'])}
+*SN:* ${sn}
+
+_*Note*_ :
+-Kode ID jangan sampai lupa! Karna Diantara Kodenya adalah kode gift yang berhadiah! Jika Anda Beruntung!
+-Kalau mau unreg, lupa sn ketik ${usedPrefix}sn`, wm, 'Kode Sn', '.sn', m)
 }
 handler.help = ['daftar', 'register'].map(v => v + ' <name>.<age>')
 handler.tags = ['xp']
