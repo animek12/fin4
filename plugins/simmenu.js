@@ -236,7 +236,7 @@ let levelling = require('../lib/levelling')
 
 ●────━───༺༻───━────●
                 *《 BOT INFO 》*
-⚘ *Bot Name: HAORI IQ MD*
+⚘ *Bot Name: CUTE IQ-MD IQ MD*
 ⚘ *Creator: Stah Ziv San*
 ⚘ *Contact Owner Bot*
 *http://wa.me/16199961931*
@@ -278,183 +278,229 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
  *Official Bot By @${'0'.split('@')[0]}* 
  *Powered By @${'16199961931'.split('@')[0]}*`
        let judul = `${ucapan()}`.trim() 
-       const sections = [ 
-             { 
-               "rows": [{ 
-                 "title": `Semua Perintah`, 
-                 "description": "Menu Semua Perintah", 
-                 "rowId": '.? all'
-                 }], 
-               "title": "Sub-menu ke- 1" 
-             }, { 
-               "rows": [{ 
-                 "title": `Play Game`, 
-                 "description": "Menu untuk bermain game dan mendapatkan xp untuk levelup", 
-                 "rowId": '.? game'
-               }], 
-               "title": "Sub-menu ke- 2" 
-             }, { 
-               "rows": [{ 
-                 "title": `Leveling Xp Dan Balance`, 
-                 "description": "Tingkatkan Xp Dan Balance Mu Ya Kak 🥰", 
-                 "rowId": '.? xp'
-               }], 
-               "title": "Sub-menu ke- 3" 
-             }, { 
-               "rows": [{ 
-                 "title": `Sticker Editing`, 
-                 "description": "Menu membuat sticker dan lainnya kakak", 
-                 "rowId": '.? stiker'
-               }], 
-               "title": "Sub-menu ke- 4" 
-             }, { 
-               "rows": [{ 
-                 "title": `Weebs Zone`, 
-                 "description": "Some anime, manga, doujinshi stuff & random anime wibu baka >//< ", 
-                 "rowId": '.? anime'
-               }], 
-               "title": "Sub-menu ke- 5" 
-             }, { 
-               "rows": [{ 
-                 "title": `Kerang Ajaib`, 
-                 "description": "Menu jawaban random dari bot, masa gak tau gak pernah nonton spongebob ya?", 
-                 "rowId": '.? kerangajaib'
-               }], 
-               "title": "Sub-menu ke- 6" 
-             }, { 
-               "rows": [{ 
-                 "title": `Quotes`, 
-                 "description": "Menu random quotes & membuat quotes", 
-                 "rowId": '.? quotes'
-               }], 
-               "title": "Sub-menu ke- 7" 
-             }, { 
-               "rows": [{ 
-                 "title": `Admin`, 
-                 "description": "List Fitur Khusus Admin-Group", 
-                 "rowId": '.? admin'
-               }], 
-               "title": "Sub-menu ke- 8" 
-             }, { 
-               "rows": [{ 
-                 "title": `Grup`, 
-                 "description": "List Fitur Khusus Untuk Mengatur Group", 
-                 "rowId": '.? grup'
-               }], 
-               "title": "Sub-menu ke- 9" 
-             }, { 
-               "rows": [{ 
-                 "title": `Upgrade Premium`, 
-                 "description": "Mau Beli Premium Kak? Info Lebih Lanjut, Klik Ini", 
-                 "rowId": '.? premium'
-               }], 
-               "title": "Sub-menu ke- 10" 
-             }, { 
-               "rows": [{ 
-                 "title": `Internet`, 
-                 "description": "Menu untuk menjelajahi Internet...", 
-                 "rowId": '.? internet'
-               }], 
-               "title": "Sub-menu ke- 11" 
-             }, { 
-               "rows": [{ 
-                 "title": `Anonymous Chat`, 
-                 "description": "Menu untuk bermain anonymous chat versi whatsapp", 
-                 "rowId": '.? anonymous'
-               }], 
-               "title": "Sub-menu ke- 12" 
-             }, { 
-               "rows": [{ 
-                 "title": `Nulis & Logo`, 
-                 "description": "Menu untuk Nulis & Logo", 
-                 "rowId": '.? nulis'
-               }], 
-               "title": "Sub-menu ke- 13" 
-             }, { 
-               "rows": [{ 
-                 "title": `Downloader`, 
-                 "description": "Kalo Mau Unduh Sesuatu Bisa Di Sini", 
-                 "rowId": '.? downloader'
-               }], 
-               "title": "Sub-menu ke- 14" 
-             }, { 
-               "rows":[{ 
-                 "title": `Tools`, 
-                 "description": "Mungkin bisa membantumu", 
-                 "rowId": '.? tools'
-               }], 
-               "title": "Sub-menu ke- 15" 
-             }, { 
-               "rows": [{ 
-                 "title": `Fun Features`, 
-                 "description": "Fitur Bot Yang Bisa Dipake Buat Happy-an", 
-                 "rowId": '.? fun'
-               }], 
-               "title": "Sub-menu ke- 16" 
-             }, { 
-               "rows": [{ 
-                 "title": `Database`, 
-                 "description": "Menu untuk Database", 
-                 "rowId": '.? database'
-               }], 
-               "title": "Sub-menu ke- 17" 
-             }, { 
-               "rows": [{ 
-                 "title": `Vote & Absen`, 
-                 "description": "Menu untuk Vote & Absen", 
-                 "rowId": '.? vote'
-               }], 
-               "title": "Sub-menu ke- 18" 
-             }, { 
-               "rows": [{ 
-                 "title": `Islamic`, 
-                 "description": "Menu agama islam, tetap jaga toleransi beragama ya kak 😚", 
-                 "rowId": '.? quran'
-               }], 
-               "title": "Sub-menu ke- 19" 
-             }, { 
-               "rows": [{ 
-                 "title": `Pengubah Suara`, 
-                 "description": "Menu pengubah suara audio atau convert audio", 
-                 "rowId": '.? audio'
-               }], 
-               "title": "Sub-menu ke- 20" 
-             }, { 
-               "rows": [{ 
-                 "title":  `Jadi Bot`, 
-                 "description": "Masih Belum Ada Mau Di Kembangkan", 
-                 "rowId": '.? jadibot'
-               }], 
-               "title": "Sub-menu ke- 21" 
-             }, { 
-               "rows": [{ 
-                 "title": `Info`, 
-                 "description": "Menu info seperti pemilik bot dan source code bot", 
-                 "rowId": '.? info'
-               }], 
-               "title": "Sub-menu ke- 22" 
-             }, { 
-               "rows": [{ 
-                 "title": `Tanpa Kategori`, 
-                 "description": "Fitur Nggak Tau Guna Nya Apa", 
-                 "rowId": '.? tanpakategori'
-              }], 
-               "title": "Sub-menu ke- 23" 
-             }, { 
-               "rows": [{ 
-                 "title": `Asupan`, 
-                 "description": "Asupan Cacan & Cogan", 
-                 "rowId": '.? asupan'
-               }], 
-               "title": "Sub-menu ke- 24" 
-             }, { 
-               "rows": [{ 
-                 "title":  `Owner Menu`, 
-                 "description": "Menu Khusus Owner Yang Cute", 
-                 "rowId": '.? owner'
-               }], 
-               "title": "Sub-menu ke- 25" 
-             } 
+       const sections = [
+                              {
+                                "rows": [{
+                                         "title": "📊 › Status ",
+                                         "description": "Status カ CUTE IQ-MD",
+                                         "rowId": ".botstat"
+                                    }, {
+                                         "title": "⚡› Speed ",
+                                         "description": "Menampilkan Kecepatan Respon カ CUTE IQ-MD",
+                                         "rowId": ".ping"
+                                    }, {
+                                         "title": "🗒️› Info ",
+                                         "description": "Menampilkan Info カ CUTE IQ-MD",
+                                         "rowId": ".info"
+                                    }, {
+                                         "title": "🎐 › Developer Bot ",
+                                         "description": "Kontak Creator Ku",
+                                         "rowId": ".owner"
+                                    }, {
+                                         "title": "❗ › Syarat Dan Peraturan ",
+                                         "description": "Budayakan Membaca Sebelum Menggunakan Bot",
+                                         "rowId": ".rules"
+                                    }, {
+                                         "title": "🪙 ›  Leaderboard",
+                                         "description": "Cek Posisi Mu",
+                                         "rowId": ".lb"  
+                                    }, {
+                                         "title": "💌 › Group Official Bot",
+                                         "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan",
+                                         "rowId": ".gcbot"                               
+      }],             
+                    "title": "▮Status 」"
+                }, {
+                  "rows": [{
+                  "title": "「 💬 」› Semua Perintah",
+                  "description": "Menampilkan semua fitur dari bot",
+                  "rowId": ".? all"
+                }, {              
+                  "title": "「 🎮 」› Game ",
+                  "description": "Menampilkan fitur dari game",
+                  "rowId": ".? game"
+                }, {
+                  "title": "「 🌱 」› Rpg ",
+                  "description": "Menampilkan fitur dari rpg ! ",
+                  "rowId": ".? rpg"
+                }, {
+                  "title": "「 📈 」› Exp & Limit ",
+                  "description": "Menampilkan fitur dari xp",
+                  "rowId": ".? xp"
+                }, {
+                  "title": "「 🧩 」› Fun ",
+                  "description": "Menampilkan fitur dari fun",
+                  "rowId": ".? fun"
+                }, {
+                  "title": "「 🎁 」› Gift ",
+                  "description": "Menampilkan fitur dari gift!",
+                  "rowId": ".? gift"
+                }, {
+                  "title": "「 🔞 」› Nsfw ",
+                  "description": "Menampilkan fitur dari nsfw",
+                  "rowId": ".? nsfw"
+                }, {
+                  "title": "「 ⛩️ 」› Anime ",
+                  "description": "Menampilkan fitur dari anime",
+                  "rowId": ".? anime"
+                }, {
+                  "title": "「 📰 」› News ",
+                  "description": "Menampilkan fitur dari berita",
+                  "rowId": ".? News"
+                },  {
+                  "title": "「 ☪️ 」› Islamic ",
+                  "description": "Menampilkan fitur dari islam",
+                  "rowId": ".? quran"
+                }, {
+                  "title": "「 📚 」› Edukasi ",
+                  "description": "Menampilkan fitur dari edukasi",
+                  "rowId": ".? edukasi"
+                }, {
+                  "title": "「 🖼️ 」› Random Pict ",
+                  "description": "Menampilkan fitur dari foto",
+                  "rowId": ".? image"
+                },  {
+                  "title": "「 🎫 」› Sticker ",
+                  "description": "Menampilkan fitur dari sticker",
+                  "rowId": ".? stiker"
+                }, {
+                  "title": "「 🐚 」› Kerang Ajaib",
+                  "description": "Menampilkan fitur dari kerang ajaib",
+                  "rowId": ".? kerangajaib"
+                }, {
+                  "title": "「 🎵 」› Sound Music ",
+                  "description": "Menampilkan fitur dari sound music",
+                  "rowId": ".? sound"
+                }, { 
+                  "title": "「 🎧 」› Random Vn",
+                  "description": "Menampilkan fitur dari rendom vn",
+                  "rowId": ".? vn"                                                      
+                }, {
+                  "title": "「 📑 」› Quotes ",
+                  "description": "Menampilkan fitur dari random teks",
+                  "rowId": ".? quotes"
+                }, {
+                  "title": "「 🏛️  」› Group Settings ",
+                  "description": "Menampilkan fitur dari pengaturan grup",
+                  "rowId": ".? admin"
+                }, {
+                  "title": "「 👥 」› Group ",
+                  "description": "Menampilkan fitur dari group",
+                  "rowId": ".? grup"
+                }, {
+                  "title": "「 🌟 」› Premium ",
+                  "description": "Menampilkan fitur dari premium",
+                  "rowId": ".? premium"
+                }, {
+                  "title": "「 💻 」› Internet ",
+                  "description": "Menampilkan fitur dari internet",
+                  "rowId": ".? internet"
+                }, {
+                  "title": "「 🖊️ 」› Editz Menu ",
+                  "description": "Menampilkan fitur dari logo",
+                  "rowId": ".? nulis"
+                }, {
+                  "title": "「 📩 」› Downloader ",
+                  "description": "Menampilkan fitur dari download",
+                  "rowId": ".? downloader"
+                }, {
+                  "title": "「 🎭 」›  Anonymous Chat",
+                  "description": "Menampilkan fitur dari anonymous chat",
+                  "rowId": ".? anonymous"  
+                }, {              	
+                  "title": "「 🧰 」› Tools ",
+                  "description": "Menampilkan fitur dari tools",
+                  "rowId": ".? tools"
+                }, {
+                  "title": "「 📂 」› Database ",
+                  "description": "Menampilkan fitur dari database",
+                  "rowId": ".? database"
+                }, {
+                  "title": "「 🗳️ 」› Vote & Absen ",
+                  "description": "Menampilkan fitur dari vote",
+                  "rowId": ".? vote"
+                }, {
+                  "title": "「 🎙️ 」› Voice Changer ",
+                  "description": "Menampilkan fitur dari voice changer ",
+                  "rowId": ".? audio"
+                }, {
+                  "title": "「 🐾 」› Furry Kawai",
+                  "description": "Menampilkan fitur dari random furry ",
+                  "rowId": ".? furry"
+                }, {
+                  "title": "「 ℹ️ 」› Info ",
+                  "description": "Menampilkan fitur dari info",
+                  "rowId": ".? info"
+                }, {
+                  "title": "「 ❓ 」› No Category ",
+                  "description": "Menampilkan fitur dari tanpa kategori",
+                  "rowId": ".? tanpakategori"
+                }, {
+                  "title": "「 👩🏻‍💻 」› Owner ",
+                  "description": "Menampilkan fitur dari owner",
+                  "rowId": ".? owner"
+                }],
+                                "title": "▮Category 」"
+                                }, {
+                                "rows": [{                                	
+                                "title": "📝 ∫  Catatan Perubahan ",
+                                "description": "Last Update Terakhir Di CUTE IQ-MDbotz",
+                                "rowId": ".notes"                  
+                }],                
+                                "title": "▮Last Update 」"
+                                }, {
+                                "rows": [{                                	
+                  "title": "「 🗨️ 」› Ziv Chat ",
+                  "description": "Mengobrol Dengan Orang Lain",
+                  "rowId": ". start"
+                }],
+                                "title": "▮Anonymous Chat 」"
+                                }, {
+                                "rows": [{                                	
+                                         "title": "📣 › Group Setting ",
+                                         "description": "Setting Grup",
+                                         "rowId": ".setelangrub" 
+                                     }, {
+                                         "title": "⚙️ › Bot Setting ",
+                                         "description": "Setting Bot",
+                                         "rowId": ".botsett" 
+                 }],
+                                "title": "▮Pengaturan 」" 
+                                }, {
+                                "rows": [{
+                                "title": "🗳️ ∫  Donasi ",
+                                "description": "Donasi kak, jangan enak pakenya doang",
+                                "rowId": ".donasi"
+                                }, {
+                                "title": "🔖 ∫  Sewa bot - Premium ",
+                                "description": "Untuk kamu yang ingin melihat daftar harga sewa dan premium",
+                                "rowId": ".sewa"
+                                }, {
+                                "title": "🌟 ∫  Premium ",
+                                "description": "Menampilkan List Harga premium",
+                                "rowId": ".premium"
+                                }, {
+                                "title": "🔬  ∫  Source Code ",
+                                "description": "Menampilkan Source Code Bot",
+                                "rowId": ".sc"
+                                }, {
+                                "title": "💭 ∫  Pertanyaan Tentang Bot Ini ",
+                                "description": "Especially WhatsApp users whose numbers start with +212",
+                                "rowId": ".QnA"
+                                }, {
+                                "title": "☎️ ∫  Kata penutup ",
+                                "description": "Terimakasih untuk user yang telah menggunakan bot, jika ada kesalahan atau permintaan bisa chat ke nomor owner\nNote: chat P/main² tidak akan di respon(user bisa terkena banned/block)",
+                                "rowId": ".creator"
+                                }], 
+                    "title": "▮Info Lainnya 」"
+                }, {
+                  "rows": [{
+                  "title": "🥇「 Contributor 」",
+                  "description": "Terima kasih banyak untuk user yang telah berpartisipasi",                  
+                  "rowId": ".? thnks"
+                       }],
+                                "title": "▮Thanks To  」"
+                            }
            ] 
     const listMessage = {
       text: `Hai Kak ${name} Pilih Menu Dibawah Ini Yah Kak`,
