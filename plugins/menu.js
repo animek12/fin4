@@ -7,16 +7,18 @@ let levelling = require('../lib/levelling')
  let PhoneNumber = require('awesome-phonenumber') 
  const defaultMenu = { 
    before: ``.trim(),
-  header: '┌•──「 *%category* 」',
-  body: '│✎ %cmd %islimit %isPremium',
-  footer: '╰•──────────────┈ ⳹\n',
-  after: ``,
+   header: '╭──────━•「 *%category* 」•━──────···\n┷', 
+   body: '%isPremium ◌ ⃝%islimit⪼ %cmd', 
+   footer: '┯\n╰───────═┅═────────···', 
+   after: `⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕. 
+      %me 
+ `,
 }
  let handler = async (m, { conn, usedPrefix: _p, args, command }) => { 
   
    let tags 
    let teks = `${args[0]}`.toLowerCase() 
-   let array = ['all', 'absen', 'rpg', 'anime', 'downloader', 'game', 'fun', 'xp', 'github', 'group', 'image', 'quotes', 'admin', 'info', 'internet', 'islam', 'kerang', 'maker', 'owner', 'suara', 'premium', 'quotes', 'info', 'stalk', 'shortlink', 'sticker', 'tools', 'text', 'nsfw', 'asupan', 'random', 'textpro', 'photooxy'] 
+   let array = ['all', 'absen', 'rpg', 'anime', 'downloader', 'game', 'fun', 'xp', 'github', 'group', 'image', 'quotes', 'admin', 'info', 'internet', 'islam', 'kerang', 'maker',  'sound', 'vn', 'furry', 'owner', 'suara', 'premium', 'quotes', 'info', 'stalk', 'shortlink', 'sticker', 'tools', 'text', 'nsfw', 'asupan', 'random', 'textpro', 'photooxy'] 
    if (!array.includes(teks)) teks = '404' 
    if (teks == 'all') tags = { 
    'main': 'UTAMA', 
@@ -36,6 +38,9 @@ let levelling = require('../lib/levelling')
    'islam': 'ISLAMI', 
    'kerang': 'KERANG', 
    'maker': 'MAKER', 
+   'furry': 'Furry Kawai',
+   'sound': 'Sound Music',
+   'vn': 'Vn Imuet',
    'owner': 'OWNER', 
    'Pengubah Suara': 'PENGUBAH SUARA', 
    'premium': 'PREMIUM ', 
@@ -81,7 +86,10 @@ let levelling = require('../lib/levelling')
    } 
    if (teks == 'image') tags = { 
    'image': 'IMAGE', 
-   } 
+   }
+   if (teks == 'furry') tags = {
+    'furry': 'Furry Kawai'
+  }
    if (teks == 'info') tags = { 
    'info': 'INFO', 
    } 
@@ -105,6 +113,12 @@ let levelling = require('../lib/levelling')
    if (teks == 'suara') tags = { 
    'Pengubah Suara': 'PENGUBAH SUARA', 
    } 
+ if (teks == 'sound') tags = {
+    'sound': 'Sound Music'
+  }
+  if (teks == 'vn') tags = {
+    'vn': 'Vn Imuet'
+  }
    if (teks == 'text') tags = { 
    'text': 'MAKER TEXT', 
    } 
@@ -147,7 +161,10 @@ let levelling = require('../lib/levelling')
   
   
    try { 
-           let hao = `Ⓟ = for premium users.\nⓁ = fitur berlimit.
+           let hao = `▸ *▱* = Free 
+ ▸ *▰* = Premium 
+ ▸ *□* = No Limit 
+ ▸ *■* = Limit
  
  *Official Bot By @${'0'.split('@')[0]}* 
  *Powered By @${'16199961931'.split('@')[0]}*` 
@@ -321,8 +338,8 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
            ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => { 
              return menu.help.map(help => { 
                return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help) 
-                 .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '') 
-                 .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '') 
+                 .replace(/%islimit/g, menu.limit ? '■' : '□') 
+                 .replace(/%isPremium/g, menu.premium ? '▰' : '▱')
                  .trim() 
              }).join('\n') 
            }), 
@@ -397,19 +414,19 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
    const time = moment.tz('Asia/Jakarta').format('HH') 
    res = "Selamat dinihari" 
    if (time >= 4) { 
-     res = "Selamat pagi" 
+      res = "Selamat pagi 🌄" 
    } 
    if (time > 10) { 
-     res = "Selamat siang" 
+     res = "Selamat siang ☀️" 
    } 
    if (time >= 15) { 
-     res = "Selamat sore" 
+     res = "Selamat sore 🌇" 
    } 
    if (time >= 18) { 
-     res = "Selamat malam" 
+     res = "Selamat malam 🌙" 
    } 
    return res 
- } 
+ }
   
  //By fahri adison = https://github.com/FahriAdison 
   
