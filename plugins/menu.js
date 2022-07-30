@@ -7,9 +7,9 @@ let levelling = require('../lib/levelling')
  let PhoneNumber = require('awesome-phonenumber') 
  const defaultMenu = { 
    before: ``.trim(),
-  header: '╭────━•「  *%category*  」•━────ꕥ\n┷', 
-   body: '%isPremium ◌ ⃝%islimit⪼ %cmd', 
-   footer: '┯\n╰───────═┅═────────┈ ⳹', 
+  header: `あ「  *%category*  」`, 
+   body: '◦ %cmd %islimit %isPremium', 
+   footer: '', 
    after: `⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕. 
       %me 
  `,
@@ -161,10 +161,7 @@ let levelling = require('../lib/levelling')
   
   
    try { 
-           let hao = `▸  *▱* = Free 
-▸  *▰* = Premium 
-▸  *□* = No Limit 
-▸  *■* = Limit
+           let hao = `▸ Ⓟ = for premium users.\n▸ Ⓛ = fitur berlimit.
  
  *Official Bot By @${'0'.split('@')[0]}* 
  *Powered By @${'16199961931'.split('@')[0]}*` 
@@ -338,8 +335,8 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
            ...help.filter(menu => menu.tags && menu.tags.includes(tag) && menu.help).map(menu => { 
              return menu.help.map(help => { 
                return body.replace(/%cmd/g, menu.prefix ? help : '%p' + help) 
-                 .replace(/%islimit/g, menu.limit ? '■' : '□') 
-                 .replace(/%isPremium/g, menu.premium ? '▰' : '▱')
+                 .replace(/%islimit/g, menu.limit ? 'Ⓛ' : '')
+                .replace(/%isPremium/g, menu.premium ? 'Ⓟ' : '')
                  .trim() 
              }).join('\n') 
            }), 
