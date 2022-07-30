@@ -9,6 +9,31 @@ let format = sizeFormatter({
   render: (literal, symbol) => `${literal} ${symbol}B`,
 })
 let handler = async (m, { conn, usedPrefix }) => {
+	let tag = `@${m.sender.split('@')[0]}`
+ m, { contextInfo: { mentionedJid: conn.parseMention(tag) }}
+	let waofc = `@${'0'.split('@')[0]}`
+ m, { contextInfo: { mentionedJid: conn.parseMention(tag) }}
+ let ow = `@${global.owner[0].split('@')[0]}`
+ const ftrol = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 2022,
+    status: 1,
+    surface : 1,
+    message: `⚡ Speed ${await conn.getName(conn.user.jid)}`, 
+    orderTitle: ``,
+    thumbnail: await (await fetch('https://telegra.ph/file/6e083ec916dce9821fc2e.jpg')).buffer(), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    }
+    }
+      let ftr = `
+Verify By ${waofc}
+Powered By ${ow}`
   await m.reply('_Testing speed..._')
   await conn.delay(2000)
   const chats = Object.keys(await conn.chats)
@@ -41,15 +66,12 @@ let handler = async (m, { conn, usedPrefix }) => {
   let old = performance.now()
   let neww = performance.now()
   let speed = neww - old
-  await conn.send2Button(m.chat, `
-Merespon dalam *${speed} milidetik*
-
-💬 Status : 
-- *${groupsIn.length}* Group Chats
-- *${groupsIn.length}* Groups Joined
-- *${groupsIn.length - groupsIn.length}* Groups Left
-- *${chats.length - groupsIn.length}* Personal Chats
-- *${chats.length}* Total Chats
+  await conn.send2ButtonDoc(m.chat, `💬 Status : 
+• *${groupsIn.length}* Group Chats
+• *${groupsIn.length}* Groups Joined
+• *${groupsIn.length - groupsIn.length}* Groups Left
+• *${chats.length - groupsIn.length}* Personal Chats
+• *${chats.length}* Total Chats
  
 💻 *Server Info* :
 RAM: ${format(os.totalmem() - os.freemem())} / ${format(os.totalmem())}
@@ -62,8 +84,18 @@ ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type =>
 
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
-`.trim(), wm, 'Speedtest', usedPrefix + 'speedtest', 'Menu', usedPrefix + 'Menu', m)
-}
+`.trim(), ftr, 'Speedtest', usedPrefix + 'speedtest', 'Menu', usedPrefix + 'Menu', m, { 
+     quoted: ftrol,
+     contextInfo: { forwardingScore: 99999, isForwarded: true, 
+         externalAdReply: { 
+                 sourceUrl: 'https://vt.tiktok.com/ZSRRmS8vh/', 
+             title: `Merespon dalam ${speed} milidetik`, 
+             body: '© Cute IQ-MD By Ziv San', 
+           thumbnail:  await (await fetch(fla + 'Ping')).buffer()
+             } 
+      } 
+     }) 
+  } 
 handler.help = ['ping', 'speed']
 handler.tags = ['info', 'tools']
 
