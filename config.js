@@ -1,5 +1,4 @@
 let fs = require('fs')
-let fetch = require('node-fetch') 
 global.owner = JSON.parse(fs.readFileSync('./src/owner.json')) // Put your number to /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./src/moderator.json')) // Want some help?
 global.thumbt = global.img
@@ -40,7 +39,7 @@ global.WM = '𝑴𝒚𝑩𝒐𝒕-𝑴𝒖𝒍𝒕𝒊 𝑫𝒆𝒗𝒊𝒄𝒆 
 global.linkgc = 'https://chat.whatsapp.com/Kyz397uqvJZ5AvX7I4BSID'
 global.linkig = 'https://www.instagram.com/the.sad.boy01'
 global.deslink = ''
-global.logo = await (await fetch('https://telegra.ph/file/1665521d176fbf172d735.jpg')).buffer()
+global.logo = 'https://telegra.ph/file/1665521d176fbf172d735.jpg'
 global.titlink = 'Folllow me on Instagram'
 global.bodlink = '@the.sad.boy01'
 
