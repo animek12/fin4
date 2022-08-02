@@ -197,6 +197,10 @@ let levelling = require('../lib/levelling')
         enabled: !plugin.disabled,
       }
     })
+    let _pp = './src/avatar_contact.png'
+  let user = db.data.users[m.sender]
+  let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let pp = await conn.profilePictureUrl(who)
         const ftrol = {
     key : {
     remoteJid: 'status@broadcast',
@@ -509,7 +513,7 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
       buttonText: "Pilih Disini",
       sections
     }
-     await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/b5df12c553f94303cc22a.jpg', tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
+     await conn.send3ButtonLoc(m.chat, pp, tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
     return conn.sendMessage(m.chat, listMessage, { quoted: ftroli, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
