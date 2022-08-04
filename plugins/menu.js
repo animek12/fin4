@@ -7,7 +7,7 @@ let levelling = require('../lib/levelling')
  let PhoneNumber = require('awesome-phonenumber') 
  const defaultMenu = { 
    before: ``.trim(),
-  header: `あ「  *%category*  」`, 
+  header: `˚₊· ͟͟͞͞%category༉`, 
    body: '◦ %cmd %islimit %isPremium', 
    footer: '', 
    after: `⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕. 
@@ -312,20 +312,8 @@ let levelling = require('../lib/levelling')
  	let ori = `Hi Kak, @${m.sender.split`@`[0]}
  
 Saya Adalah Cute Bot Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah Sesuatu Seperti Membuat Sticker Dan Lainnya, Kalo Kamu Mau Request Fitur Silahkan Ketik #request Pesan Atau Fitur Yang Kamu Inginkan!`
-//return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod And Button It Doesn't Look Di Rectly Type ${_p}allmenu Or ${_p}simplemenu`, 'COMMAND', '.simplemenu', 'DONASI', '.donasi', m)
-    return conn.send2ButtonDoc(m.chat, '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', 'Rules', '.rules', m, { 
-     quoted: ftoko, 
-     contextInfo: { forwardingScore: 99999, isForwarded: true, 
-         externalAdReply: { 
-             title: 'Cute IQ-MD Testing Project By Ziv San', 
-             body: `${pickRandom(['udah makan belum kak?', 'udh mandi belum kak?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'jangan spam ya kak!', 'Jangan lupa donasi yak kak! >.<', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! >.<', 'I Love you kak >.< 💗✨', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`, 
-             description: `${pickRandom(['udah makan belum kak?', 'udh mandi belum kak?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'jangan spam ya kak!', 'Jangan lupa donasi yak kak! >.<', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! >.<', 'I Love you kak >.< 💗✨', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`, 
-             mediaType: 2, 
-           thumbnail: await (await fetch(`${logos()}`)).buffer(),
-          mediaUrl: `https://www.facebook.com/Inunime-107082474576049/`
-         } 
-      } 
-     })
+return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod And Button It Doesn't Look Di Rectly Type ${_p}allmenu Or ${_p}simplemenu`, 'COMMAND', '.simplemenu', 'DONASI', '.donasi', m)
+    
     }
   
      let groups = {} 
@@ -389,7 +377,7 @@ Saya Adalah Cute Bot Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah
          } 
       } 
      })*/
-await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/4c8e9da8862804803c2b7.jpg', '───────[ *DASHBOARD* ]───────' , text.trim(), 'Owner', '.nowner', 'Donasi', '.donasi', 'Rules', '.rules', m)
+await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/4c8e9da8862804803c2b7.jpg', '◈┈┉────[ *DASHBOARD* ]────┉┈◈' , text.trim(), 'Owner', '.nowner', 'Donasi', '.donasi', 'Rules', '.rules', m)
  //await conn.send2ButtonImg(m.chat, await (await fetch(`${logos()}`)).buffer(), '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', '\n\nSAYA PEDO DAN SAYA BANGGA ꒪꒳꒪', 'a', fkon, { contextInfo: { forwardingScore: 999, isForwarded: true}})
 /*await conn.send2ButtonDoc(m.chat, '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', 'Rules', '.rules', m, { 
      quoted: ftoko, 
