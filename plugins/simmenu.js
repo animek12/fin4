@@ -235,6 +235,20 @@ let levelling = require('../lib/levelling')
     }
     }
     }
+    const fkgif = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "6282331033919-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+		"extendedTextMessage": {
+                 "text":`CUTE IQ MD 🌱 ┊ 𝗥𝗣𝗚 Whatsapp ʙᴏᴛ`,
+                 "title": `CUTE IQ MD 🌱 ┊ 𝗥𝗣𝗚 Whatsapp ʙᴏᴛ`,
+                 'jpegThumbnail': await (await fetch('https://telegra.ph/file/6f11ac2de8d57a1c831c4.jpg')).buffer()
+                        }
+	                  } 
+                     }
      if (teks == '404') { 
  	let tksk = `${pe}${ucapan()}, @${m.sender.split`@`[0]} ${pickRandom(['😅', '🥰', '😜'])}${pe}
 
@@ -281,7 +295,7 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
 
  *Official Bot By @${'0'.split('@')[0]}* 
  *Powered By @${'16199961931'.split('@')[0]}*`
-       let judul = `${ucapan()}`.trim() 
+       let judul = `${ucapanl()}`.trim() 
        const sections = [
                               {
                                 "rows": [{
@@ -514,7 +528,7 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
       sections
     }
      await conn.send3ButtonLoc(m.chat, pp, tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
-    return conn.sendMessage(m.chat, listMessage, { quoted: ftroli, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
+    return conn.sendMessage(m.chat, listMessage, { quoted: fkgif, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
   
@@ -626,6 +640,23 @@ handler.command = /^(simplemenu)$/i
    } 
    return res 
  } 
+ function ucapanl() {
+    const timel = moment.tz('Asia/Jakarta').format('HH')
+    resl = "Selamat dinihari 🎑"
+    if (timel >= 4) {
+        resl= "Good Morning 🌅"
+    }
+    if (timel > 10) {
+        resl = "Good Afternoon 🏞️"
+    }
+    if (timel >= 15) {
+        resl = "Good Afternoon 🌇"
+    }
+    if (timel >= 18) {
+        resl = "Good Evening 🌃"
+    }
+    return resl
+}
   
  //By fahri adison = https://github.com/FahriAdison 
   
