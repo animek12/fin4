@@ -164,7 +164,8 @@ let levelling = require('../lib/levelling')
            let hao = `▸ Ⓟ = for premium users.\n▸ Ⓛ = fitur berlimit.
  
  *Official Bot By @${'0'.split('@')[0]}* 
- *Powered By @${'16199961931'.split('@')[0]}*` 
+ *Powered By @${'16199961931'.split('@')[0]}*`
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
      let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}')) 
      let { exp, limit, age, money, level, role, registered } = global.db.data.users[m.sender] 
      let { min, xp, max } = levelling.xpRange(level, global.multiplier) 
@@ -311,8 +312,20 @@ let levelling = require('../lib/levelling')
  	let ori = `Hi Kak, @${m.sender.split`@`[0]}
  
 Saya Adalah Cute Bot Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah Sesuatu Seperti Membuat Sticker Dan Lainnya, Kalo Kamu Mau Request Fitur Silahkan Ketik #request Pesan Atau Fitur Yang Kamu Inginkan!`
-return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod And Button It Doesn't Look Di Rectly Type ${_p}allmenu Or ${_p}simplemenu`, 'COMMAND', '.simplemenu', 'DONASI', '.donasi', m)
-    
+//return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod And Button It Doesn't Look Di Rectly Type ${_p}allmenu Or ${_p}simplemenu`, 'COMMAND', '.simplemenu', 'DONASI', '.donasi', m)
+    return conn.send2ButtonDoc(m.chat, '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', 'Rules', '.rules', m, { 
+     quoted: ftoko, 
+     contextInfo: { forwardingScore: 99999, isForwarded: true, 
+         externalAdReply: { 
+             title: 'Cute IQ-MD Testing Project By Ziv San', 
+             body: `${pickRandom(['udah makan belum kak?', 'udh mandi belum kak?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'jangan spam ya kak!', 'Jangan lupa donasi yak kak! >.<', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! >.<', 'I Love you kak >.< 💗✨', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`, 
+             description: `${pickRandom(['udah makan belum kak?', 'udh mandi belum kak?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'jangan spam ya kak!', 'Jangan lupa donasi yak kak! >.<', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! >.<', 'I Love you kak >.< 💗✨', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`, 
+             mediaType: 2, 
+           thumbnail: await (await fetch(`${logos()}`)).buffer(),
+          mediaUrl: `https://www.facebook.com/Inunime-107082474576049/`
+         } 
+      } 
+     })
     }
   
      let groups = {} 
@@ -363,7 +376,7 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
      } 
      text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name]) 
      await conn.reply(m.chat, '*L o a d i n g . . .*', fload) 
-    await conn.send2ButtonImg(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), hao, 'Donasi', '.donasi', 'Rules', '.rules', m, { 
+    /*await conn.send2ButtonImg(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), hao, 'Donasi', '.donasi', 'Rules', '.rules', m, { 
      quoted: ftoko, 
      contextInfo: { forwardingScore: 99999, isForwarded: true, 
          externalAdReply: { 
@@ -375,8 +388,23 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
           mediaUrl: `${pickRandom([`https://www.facebook.com/Inunime-107082474576049/`,`https://youtu.be/JWHV8lPTzPs`])}` 
          } 
       } 
-     }) 
-   } catch (e) { 
+     })*/
+await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/4c8e9da8862804803c2b7.jpg', '───────[ *DASHBOARD* ]───────' , text.trim(), 'Owner', '.nowner', 'Donasi', '.donasi', 'Rules', '.rules', m)
+ //await conn.send2ButtonImg(m.chat, await (await fetch(`${logos()}`)).buffer(), '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', '\n\nSAYA PEDO DAN SAYA BANGGA ꒪꒳꒪', 'a', fkon, { contextInfo: { forwardingScore: 999, isForwarded: true}})
+/*await conn.send2ButtonDoc(m.chat, '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', 'Rules', '.rules', m, { 
+     quoted: ftoko, 
+     contextInfo: { forwardingScore: 99999, isForwarded: true, 
+         externalAdReply: { 
+             title: 'Cute IQ-MD Testing Project By Ziv San', 
+             body: `${pickRandom(['udah makan belum kak?', 'udh mandi belum kak?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'jangan spam ya kak!', 'Jangan lupa donasi yak kak! >.<', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! >.<', 'I Love you kak >.< 💗✨', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`, 
+             description: `${pickRandom(['udah makan belum kak?', 'udh mandi belum kak?', 'Semangat ya kak!', 'Jangan begadang mulu ya!', 'jangan spam ya kak!', 'Jangan lupa donasi yak kak! >.<', 'Jaga kesehatan yaw kak!', 'Jangan lupa makan!', 'Jangan lupa istirahat yak! >.<', 'I Love you kak >.< 💗✨', 'Pr nya udh belum kak?', 'Jangan kebanyakan main hp yk! nanti sakit :‹'])}`, 
+             mediaType: 2, 
+           thumbnail: await (await fetch(`${logos()}`)).buffer(),
+          mediaUrl: `https://www.facebook.com/Inunime-107082474576049/`
+         } 
+      } 
+     })*/
+  } catch (e) { 
      conn.reply(m.chat, 'Maaf, menu sedang error', m) 
      throw e 
    } 
@@ -407,6 +435,24 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60 
    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':') 
  } 
+ function logos() { 
+   const lgs = moment.tz('Asia/Jakarta').format('HH') 
+   res = "Selamat dinihari" 
+   if (lgs >= 4) { 
+     imp = 'https://telegra.ph/file/abff7903bd674a8f9d307.jpg' 
+   } 
+   if (lgs > 10) { 
+     imp = 'https://telegra.ph/file/ba940019735e224132f74.jpg' 
+   } 
+   if (lgs >= 15) { 
+     imp = 'https://telegra.ph/file/a332bbac803e3c631bb07.jpg' 
+   } 
+   if (lgs >= 18) { 
+     imp = 'https://telegra.ph/file/a5c91ab6c58c7be066654.jpg' 
+   } 
+   return imp 
+ } 
+ 
  function ucapan() { 
    const time = moment.tz('Asia/Jakarta').format('HH') 
    res = "Selamat dinihari" 
@@ -424,8 +470,6 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
    } 
    return res 
  }
-  
- //By fahri adison = https://github.com/FahriAdison 
   
   async function genProfile(conn, m) { 
    let font = await jimp.loadFont('./name.fnt'), 
