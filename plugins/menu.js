@@ -166,7 +166,8 @@ let levelling = require('../lib/levelling')
  *Official Bot By @${'0'.split('@')[0]}* 
  *Powered By @${'16199961931'.split('@')[0]}*`
     let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}')) 
+     let pp = await conn.profilePictureUrl(who, 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
+     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}')) 
      let { exp, limit, age, money, level, role, registered } = global.db.data.users[m.sender] 
      let { min, xp, max } = levelling.xpRange(level, global.multiplier) 
      let umur = `*${age == '-1' ? 'Belum Daftar*' : age + '* Thn'}` 
@@ -292,6 +293,7 @@ let levelling = require('../lib/levelling')
          setTimeout(resolve, 1000) 
        }) * 1000 
      } 
+     let emot = conn.pickRandom(['❤️', '🌹', '🇮🇩'])
      let muptime = clockString(_muptime) 
      let uptime = clockString(_uptime) 
      global.jam = time 
@@ -307,12 +309,18 @@ let levelling = require('../lib/levelling')
          enabled: !plugin.disabled, 
        } 
      }) 
-     if (teks == '404') { 
+     if (teks == '404') {
  	let cute = `${pickRandom(['https://telegra.ph/file/dc8b3a29b4b2c770d1727.jpg', 'https://telegra.ph/file/dc8b3a29b4b2c770d1727.jpg', 'https://telegra.ph/file/1767c5d6b71e200231ca6.jpg', 'https://telegra.ph/file/13488976473884608c03c.jpg','https://telegra.ph/file/21329b42e497787e3c2c2.jpg','https://telegra.ph/file/6999d6a56326852484746.jpg', 'https://telegra.ph/file/5df66151d217bb5cd1627.jpg', 'https://telegra.ph/file/c71a6b41795ab649daef7.jpg', 'https://telegra.ph/file/c9a695262426ed4e8b3b8.jpg'])}` 
  	let ori = `Hi Kak, @${m.sender.split`@`[0]}
  
 Saya Adalah Cute Bot Salah Satu Bot Whatsapp Yang Siap Membantu Kamu Mempermudah Sesuatu Seperti Membuat Sticker Dan Lainnya, Kalo Kamu Mau Request Fitur Silahkan Ketik #request Pesan Atau Fitur Yang Kamu Inginkan!`
-return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod And Button It Doesn't Look Di Rectly Type ${_p}allmenu Or ${_p}simplemenu`, 'COMMAND', '.? all', 'DONASI', '.donasi', m)
+conn.sendMessage(m.chat, {
+    	react: {
+    		text: emot,
+    		key: m.key
+    	}
+    })	
+return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod And Button It Doesn't Look Di Rectly Type ${_p}? all`, 'COMMAND', '.? all', 'DONASI', '.donasi', m)
     
     }
   
@@ -378,7 +386,7 @@ return conn.send2ButtonLoc(m.chat, cute, ori, `Note : If You Use Old Wa Or Mod A
          } 
       } 
      })*/
-await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/4c8e9da8862804803c2b7.jpg', '◈┈┉────[ *DASHBOARD* ]────┉┈◈' , text.trim(), 'Owner', '.nowner', 'Donasi', '.donasi', 'Rules', '.rules', m)
+await conn.send3ButtonLoc(m.chat, await (await fetch(`${dimas()}`)).buffer(), '◈┈┉────[ *DASHBOARD* ]────┉┈◈' , text.trim(), 'Owner', '.owner', 'Donasi', '.donasi', 'Rules', '.rules', m)
  //await conn.send2ButtonImg(m.chat, await (await fetch(`${logos()}`)).buffer(), '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', '\n\nSAYA PEDO DAN SAYA BANGGA ꒪꒳꒪', 'a', fkon, { contextInfo: { forwardingScore: 999, isForwarded: true}})
 /*await conn.send2ButtonDoc(m.chat, '──────────[ *DASHBOARD* ]──────────', text, 'OWNER', '.owner', 'Rules', '.rules', m, { 
      quoted: ftoko, 
@@ -393,7 +401,9 @@ await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/4c8e9da8862804803c2b7
          } 
       } 
      })*/
-  } catch (e) { 
+     //conn.sendFile(m.chat, pp, 'menu.jpg', text.trim(), m).catch(_ => conn.reply(m.chat, text.trim(), m))
+  
+} catch (e) { 
      conn.reply(m.chat, 'Maaf, menu sedang error', m) 
      throw e 
    } 
@@ -441,7 +451,23 @@ await conn.send3ButtonLoc(m.chat, 'https://telegra.ph/file/4c8e9da8862804803c2b7
    } 
    return imp 
  } 
- 
+ function dimas() { 
+   const varel = moment.tz('Asia/Jakarta').format('HH') 
+   res = "Selamat dinihari" 
+   if (varel >= 4) { 
+     dimrel = 'https://telegra.ph/file/8ed7c08f3c53efb3250e8.jpg' 
+   } 
+   if (varel > 10) { 
+     dimrel = 'https://telegra.ph/file/6e44f7a0ca634419fd6fe.jpg' 
+   } 
+   if (varel >= 15) { 
+     dimrel = 'https://telegra.ph/file/5d0efe9615a43d069d9fb.jpg' 
+   } 
+   if (varel >= 18) { 
+     dimrel = 'https://telegra.ph/file/b823c87f29294bf3bb9eb.jpg' 
+   } 
+   return dimrel 
+ } 
  function ucapan() { 
    const time = moment.tz('Asia/Jakarta').format('HH') 
    res = "Selamat dinihari" 
