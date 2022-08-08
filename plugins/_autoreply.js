@@ -32,12 +32,35 @@ handler.all = async function (m) {
     if (m.isGroup) {
     if (m.fromMe) return
     if (m.mentionedJid.includes(this.user.jid) && m.isGroup) {
-    	await this.send2ButtonLoc(m.chat, 'https://telegra.ph/file/7db104fa981579f6ad94b.jpg', m.msg.contextInfo.expiration == 604800 ? '\n\nketik *.ephe* untuk matiin pesan sementaranya, biar tombolnya bisa dipake' : 'uhm.. iya ada apa?', wm, `${isBanned ? 'UNBAN' : 'MENU'}`, `${isBanned ? '.unban' : '.?'}`, `${!m.isGroup ? 'DONASI' : isBanned ? 'UNBAN' : 'BAN'}`, `${!m.isGroup ? '.donasi' : isBanned ? '.unban' : '.ban'}`, m)
+    	conn.sendMessage(m.chat, {
+    	react: {
+    		text: conn.pickRandom(['🤭', '😤', '😴']),
+    		key: m.key
+    	}
+    })	
+    	await this.send2ButtonLoc(m.chat, 'https://telegra.ph/file/96a78933baa32ab4829ca.jpg', m.msg.contextInfo.expiration == 604800 ? '\n\nketik *.ephe* untuk matiin pesan sementaranya, biar tombolnya bisa dipake' : `Ada Apa Ya Tag-Tag Saia @${m.sender.split`@`[0]}?\nApakah Ada Bansos ?`, wm, isBanned ? 'Unban' : banned ? 'Pemilik Bot' : 'Menu',
+                isBanned ? '.unban' : banned ? '.owner' : '.?',
+                m.isGroup ? 'Ban' : isBanned ? 'Unban' : 'Donasi',
+                m.isGroup ? '.ban' : isBanned ? '.unban' : '.donasi', m)
     }
 }
     
     if (/^bot$/i.test(m.text)) {
         await this.sendButton(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'aktif', wm, !(m.isGroup || m.isPrems) && group ? 'donasi' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : 'donasi', !(m.isGroup || m.isPrems) && group ? '.donasi' : isBanned ? '.unban' : banned ? '.owner' : '.donasi', m)
+    }
+    
+    if (/@16199961931$/i.test(m.text)) {
+        await this.sendButtonDoc(m.chat, !(m.isGroup || m.isPrems) && group ? 'hanya grup' : isBanned ? 'chat banned' : banned ? 'user banned' : 'Ngapain Tag Owner Saya?', wm, !(m.isGroup || m.isPrems) && group ? 'donasi' : isBanned ? 'unban' : banned ? 'minta owner kalo mau di unban' : 'donasi', !(m.isGroup || m.isPrems) && group ? '.donasi' : isBanned ? '.unban' : banned ? '.owner' : '.donasi',  m, {
+    quoted: m,
+    contextInfo: { forwardingScore: 99999, isForwarded: true,
+        externalAdReply: {
+        	sourceUrl: 'https://vt.tiktok.com/ZSRRmS8vh/',
+            title: 'Ziv San UwU',
+            body: '',
+          thumbnail: await (await fetch('https://telegra.ph/file/de1678007a368fe66c052.jpg')).buffer()
+        }
+     }
+    })
     }
 
     // backup db
