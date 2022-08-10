@@ -4,9 +4,9 @@ let handler = async (m, { conn }) => conn.sendButtonLoc(m.chat, 'https://telegra
 
 ◪ 📮 *SCRIPT BOT*
 │ *Script :* 
-│ ╰ Private 🔐
+│ ╰ https://github.com/sadteams/bot-md
 │ *Base :* 
-│ ╰ https://github.com/bochilgaming/games-wabot
+│ ╰ https://github.com/Fokusdotid/Family-MD
 ╰──────────═┅═──────────
 `,`📍 *N o t e :* 
 • Jangan lupa minta izin owner sebelum menggunakan scriptnya kak!
