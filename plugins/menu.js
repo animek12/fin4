@@ -18,7 +18,7 @@ let levelling = require('../lib/levelling')
   
    let tags 
    let teks = `${args[0]}`.toLowerCase() 
-   let array = ['all', 'absen', 'rpg', 'anime', 'downloader', 'game', 'fun', 'xp', 'github', 'group', 'image', 'quotes', 'admin', 'info', 'internet', 'islam', 'kerang', 'maker',  'sound', 'vn', 'furry', 'owner', 'suara', 'premium', 'quotes', 'info', 'stalk', 'shortlink', 'sticker', 'tools', 'text', 'nsfw', 'asupan', 'random', 'textpro', 'photooxy'] 
+   let array = ['all', 'absen', 'rpg', 'anime', 'downloader', 'game', 'fun', 'xp', 'github', 'group', 'image', 'quotes', 'admin', 'info', 'internet', 'islam', 'cristian', 'kerang', 'maker',  'sound', 'vn', 'furry', 'owner', 'suara', 'premium', 'quotes', 'info', 'stalk', 'shortlink', 'sticker', 'tools', 'text', 'nsfw', 'asupan', 'random', 'textpro', 'photooxy'] 
    if (!array.includes(teks)) teks = '404' 
    if (teks == 'all') tags = { 
    'main': 'UTAMA', 
@@ -36,6 +36,7 @@ let levelling = require('../lib/levelling')
    'info': 'INFO', 
    'internet': 'INTERNET', 
    'islam': 'ISLAMI', 
+   'cristian': 'CRISTIAN',
    'kerang': 'KERANG', 
    'maker': 'MAKER', 
    'furry': 'Furry Kawai',
@@ -99,6 +100,9 @@ let levelling = require('../lib/levelling')
    if (teks == 'islam') tags = { 
    'islam': 'ISLAMI', 
    } 
+   if (teks == 'cristian') tags = { 
+     'cristian': 'Cristian'
+   } 
    if (teks == 'kerang') tags = { 
    'kerang': 'KERANG', 
    } 
