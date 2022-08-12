@@ -115,7 +115,7 @@ conn.send2ButtonLoc(m.sender, 'https://telegra.ph/file/cdf7e73f51d11643aac4e.jpg
 _*Note*_ :
 -Kode ID jangan sampai lupa! Karna Diantara Kodenya adalah kode gift yang berhadiah! Jika Anda Beruntung!
 -Kalau mau unreg, lupa sn ketik ${usedPrefix}sn
--Jika Ingin Main Rpg Bisa Klik Button Di Bawah Untuk Tutorial`, hao, 'Kode Sn', '.sn', 'Tutor Rpg', 'tutorpg', m)
+-Jika Ingin Main Rpg Bisa Klik Button Di Bawah Untuk Tutorial`, hao, 'Kode Sn', '.sn', 'Tutor Rpg', '.tutorpg', m)
 }
 handler.help = ['daftar', 'register'].map(v => v + ' <name>.<age>')
 handler.tags = ['xp']
