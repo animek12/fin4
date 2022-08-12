@@ -8,7 +8,7 @@ const ftroli = {
                             itemCount : 1,
                             status: 1,
                             surface : 1,
-                            message: `${text} Kak ${conn.getName(m.sender)}`, //Kasih namalu
+                            message: `Okey Kak ${conn.getName(m.sender)}`, //Kasih namalu
                             orderTitle: 'Bang',
                             thumbnail: await (await fetch('https://telegra.ph/file/c4a4bea15c41d62072b60.jpg')).buffer(), //Gambarnye
                             sellerJid: '0@s.whatsapp.net'
