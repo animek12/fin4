@@ -4,7 +4,7 @@
     <a href="https://github.com/Zivfurr"><img title="Created by" src="https://img.shields.io/badge/Creator-Ziv San-green?style=for-the-badge&logo=github"></a>
 </p>
 
-# RECODE WABOT-AQ
+# RECODE BY ZIV SAN
 
 Simple WhatsApp Bot
 
