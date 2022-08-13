@@ -18,6 +18,8 @@ Simple WhatsApp Bot
 - [x] Menu <details><summary>Screenshot</summary><img src="https://telegra.ph/file/dbbe0d04c6e1b98c54014.jpg"></details>
 ------------------
 
+![Ra Github languages](https://github-readme-stats.vercel.app/api/top-langs/?username=zivfurr&theme=tokyonight)
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Rlxfly/bot-tzy)
  
    
