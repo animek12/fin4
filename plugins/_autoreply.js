@@ -62,6 +62,14 @@ handler.all = async function (m) {
      }
     })
     }
+    
+    // update status 
+     if (new Date() * 1 - setting.status > 1000) { 
+         let _uptime = process.uptime() * 1000 
+         let uptime = clockString(_uptime) 
+         await this.setBio(`⏲️ Runtime: ${uptime} | 🛰 Mode: ${global.opts['self'] ? 'Private' : setting.groupOnly ? 'Only Group' : 'Public'} | 💌 Made Ziv San`).catch(_ => _) 
+         setting.status = new Date() * 1 
+     }
 
     // backup db
     if (setting.backup) {
