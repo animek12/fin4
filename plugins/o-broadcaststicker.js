@@ -20,12 +20,12 @@ let handler  = async (m, { conn, text }) => {
        message: {
                     locationMessage: {
                     name: '「 Broadcast 」\n' + text,
-                    jpegThumbnail: await (await fetch('https://telegra.ph/file/c4a4bea15c41d62072b60.jpg')).buffer() //Gambarnye
+                    jpegThumbnail: await (await fetch('https://telegra.ph/file/6ff7406b4b0020be3669e.jpg')).buffer() //Gambarnye
                           }
                         }
                       }
        await conn.delay(1500)
-       let stek = await sticker(true, `${link}`, 'Ziv Furr Cok', 'Yamete Kudasai')
+       let stek = await sticker(true, `${link}`, 'Ziv Furr Cok', 'Ah~ Yamete Kudesai 🥵💦🍆')
       conn.sendFile(id, stek, '', '', flokasi)
      }
   m.reply('*Broadcast selesai*')
