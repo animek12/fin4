@@ -19,11 +19,22 @@ let handler = async(m, { conn }) => {
     }
     }
     }
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+    let pp = await conn.profilePictureUrl(who, 'image').catch((_) => "https://telegra.ph/file/24fa902ead26340f3df2c.png")
 	conn.p[id] = [
 	await conn.sendKontak(m.chat, kontak2, ftroli, { contexInfo: { forwardingScore: 99999, isForwarded: true } })
 	]
 	await delay(100)
-  return conn.sendButton(m.chat, `Hay kak @${await m.sender.split('@')[0]}, itu nomor ownerku jangan dispam yah ^_^`, 'Itu Owner Ku Yah Kak Jangan Sungkem Untuk Chat ;3','Credits', '.tqto', m, { quoted: conn.p[id][0] })
+  return conn.sendButtonDoc(m.chat, `Hay kak @${await m.sender.split('@')[0]}, itu nomor ownerku jangan dispam yah ^_^`, 'Itu Owner Ku Yah Kak Jangan Sungkem Untuk Chat ;3','Credits', '.tqto', m, { quoted: conn.p[id][0],
+    contextInfo: { //forwardingScore: 99999, isForwarded: true,
+        externalAdReply: { showAdAttribution: true,
+        	sourceUrl: 'https://vt.tiktok.com/ZSRRmS8vh/',
+            title: 'Jangan Bully Zivfurr Dia Kang Kopas <3',
+            body: 'Follow Tiktok Pacar Saya Bang',
+          thumbnail: await (await fetch(pp)).buffer()
+        }
+     }
+    }) 
   await delay(100)
   return delete conn.p[id]
 }
