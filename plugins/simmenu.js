@@ -527,7 +527,7 @@ let ftt = `*Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan sil
       buttonText: "Pilih Disini",
       sections
     }
-     await conn.send3ButtonLoc(m.chat, pp, tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
+     await conn.send3ButtonLoc(m.chat, await conn.resize(await genProfile(conn, m), 300, 210), tksk, ftt, 'RENT', '.sewa', 'OWNER', '.owner', 'CREDITS', '.tqto', m)
     return conn.sendMessage(m.chat, listMessage, { quoted: fkgif, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
