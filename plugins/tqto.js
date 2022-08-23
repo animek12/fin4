@@ -13,7 +13,7 @@ Terimakasih Utama Nya Teruntuk:
 Terimakasih Juga Untuk Kang Banned:
 ➸ @${'0'.split('@')[0]}
 
-─────────────────────
+──────────────────────
 • God
 • My ortu
 • Zivfurr / Ziv San ( Me )
@@ -50,9 +50,8 @@ Terimakasih Juga Untuk Kang Banned:
 • Aca Mirabel
 • Penyedia Layanan API
 • Orang-orang yang Berdonasi
-─────────────────────
-`
-await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/16b154ad8a96d7ad246cb.jpg',  tqto, `Ini Ucapan Terima Kasih Untuk Orang Nya Telah Berpatisipasi
+──────────────────────`
+await conn.sendButtonLoc(m.chat, await conn.resize('https://telegra.ph/file/0e265e801d892a340e877.png', 300, 300),  tqto, `Ini Ucapan Terima Kasih Untuk Orang Nya Telah Berpatisipasi
 
 Official By @${'0'.split('@')[0]}`, 'Rules', '.rules', m)
 }
