@@ -2,6 +2,51 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let hao = `*Official Bot By @${'0'.split('@')[0]}* 
 *Powered By @${global.owner[0].split('@')[0]}*` 
+let ftrol = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 2022,
+    status: 1,
+    surface : 1,
+    message: `📮 𝗥𝗣𝗚 Whatsapp ʙᴏᴛ`, 
+    orderTitle: `▮Menu ▸`,
+    thumbnail: await conn.resize(await (await fetch(fla + 'Setting')).buffer(), 300, 200), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    } 
+    }
+const sections = [
+   {
+	title: `List Options`,
+	rows: [
+	    {title: "✨ | Welcome", rowId: `${usedPrefix + command} welcome`},
+	    {title: "🚫 | Delete", rowId: `${usedPrefix + command} delete`},
+	    {title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
+	{title: "🗣️ | Simi", rowId: `${usedPrefix + command} simi`},
+	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
+	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
+	{title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
+	{title: "📛 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`},
+	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
+	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
+	{title: "📑 | Document", rowId: `${usedPrefix + command} document`},
+	{title: "👤 | WhiteListMyContact", rowId: `${usedPrefix + command} whitelistmycontact`},
+	{title: "☑️ | Autoread", rowId: `${usedPrefix + command} autoread`},
+	]
+    },
+]
+
+const listMessage = {
+  text: '───────[ BOT SETTING ]───────',
+  footer: 'Silakan Klik Di Bawah Untuk Mengatur Bot',
+  title: '',
+  buttonText: "Click Here!",
+  sections
+}
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let setting = global.db.data.settings
@@ -256,28 +301,13 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       chat.simi = isEnable
       break
     default:
-      if (!/[01]/.test(command)) return conn.send2ButtonLoc(m.chat, 'https://telegra.ph/file/38d252ceac04982e44663.jpg', `
-╭› Daftar Opsi 」${isOwner ? '\n├⋆ anon\n├⋆ anticall\n├⋆ antispam\n├⋆ antitroli\n├⋆ autoread\n├⋆ backup\n├⋆ clear\n├⋆ grouponly\n├⋆ jadibot\n├⋆ nsfw\n├⋆ public\n├⋆ mycontact' : ''}
-├⋆ antilink
-├⋆ autolevelup
-├⋆ antibadword
-├⋆ rpg
-├⋆ delete
-├⋆ detect
-├⋆ document
-├⋆ stiker
-├⋆ simi
-├⋆ welcome
-╰────····⋆
-
-*Contoh:*
-${usedPrefix}on welcome
-${usedPrefix}off welcome
-`.trim(), hao, 'Owner', '.owner', 'Menu', '.menu', m)
+      if (!/[01]/.test(command)) return  conn.sendMessage(m.chat, listMessage, { quoted: ftrol, mentions: await conn.parseMention(wm), contextInfo: { forwardingScore: 99999, isForwarded: true }})
       throw false
   }
-  conn.send2Button(m.chat,`*${isEnable ? '✅' : '❌'} ${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'}
-`, wm, `⋮☰ Menu`, '.menu', `${isEnable ? 'Off' : 'On'} ${type}`, `.${isEnable ? 'Off' : 'On'} ${type}` ,{ key: { fromMe: false, remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { message: `Colour Your Life`, itemCount: 99999, thumbnail: await (await fetch('https://telegra.ph/file/09f6fd389fef97938b40b.jpg')).buffer(),}}})
+  conn.send2Button(m.chat,`🗂️ *Type:* ${type} 
+📊 *Status:* Succes ✅
+🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
+📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}`, wm, `⋮☰ Menu`, '.menu', `${isEnable ? 'Off' : 'On'} ${type}`, `.${isEnable ? 'Off' : 'On'} ${type}` ,{ key: { fromMe: false, remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { message: `Colour Your Life`, itemCount: 99999, thumbnail: await (await fetch('https://telegra.ph/file/09f6fd389fef97938b40b.jpg')).buffer(),}}})
 }
 handler.help = ['on', 'off'].map(v => v + ' <opsi>')
 handler.tags = ['group', 'owner']
