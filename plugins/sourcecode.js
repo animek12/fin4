@@ -2,11 +2,9 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn }) => conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/18c123b72250f8f44a6b8.jpg',
 `Hi Kak @${m.sender.split('@')[0]} 
 
-◪ 📮 *SCRIPT BOT*
-│ *Script :* 
-│ ╰ https://github.com/sadteams/bot-md
-│ *Base :* 
-│ ╰ https://github.com/Fokusdotid/Family-MD
+◪ 📮 SOURCE BOT*
+│ *Source code :* 
+│ https://linktr.ee/fin222
 ╰──────────═┅═──────────
 `,`📍 *N o t e :* 
 • Jangan lupa minta izin owner sebelum menggunakan scriptnya kak!
