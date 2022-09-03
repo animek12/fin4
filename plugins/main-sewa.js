@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn }) => {
-    pepe = 'https://i.ibb.co/BzR1jRq/08a088fe953b.jpg'
+    pepe = 'https://i.postimg.cc/FsSHms85/menu.png'
     baper = await fetch(pepe).then(a => a.buffer())
     let listMessage = {
         "title": "◈ Made by FIN BOTZ",
