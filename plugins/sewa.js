@@ -31,7 +31,7 @@ let fetch = require('node-fetch')
                      "description": "Harap membaca Peraturan demi kenyamanan kita bersama", 
                      "rowId": `${usedPrefix}rules` 
                    }, { 
-                     "title": "Group Official Cute Bot", 
+                     "title": "Group Official FIN Bot", 
                      "description": "Gabung untuk mendapatkan informasi mengenai bot atau sekedar meramaikan", 
                      "rowId": `${usedPrefix}gcbot` 
                    }], 
@@ -45,11 +45,11 @@ let fetch = require('node-fetch')
                    "title": "────────「 Trial 」" 
                  }, { 
                      "rows": [{ 
-                       "title": `Permanent! Rp5.000`, 
-                       "description": "Masukkan bot ke dalam group tanpa batasann waktu!", 
+                       "title": `2 minggu! Rp10.000`, 
+                       "description": "Masukkan bot ke dalam group selama 2 minggu!", 
                        "rowId": ".masuk"
                    }], 
-                     "title": "───────「 Permanent 」" 
+                     "title": "───────「 2 minggu 」" 
                  } 
                ]
          const listMessage = {
