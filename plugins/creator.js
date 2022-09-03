@@ -31,8 +31,8 @@ let handler = async(m, { conn }) => {
   return conn.sendButtonDoc(m.chat, `Hay kak @${await m.sender.split('@')[0]}, itu nomor ownerku jangan dispam yah ^_^`, 'Itu Owner Ku Yah Kak Jangan Sungkem Untuk Chat ;3','Credits', '.tqto', m, { quoted: conn.p[id][0],
     contextInfo: { //forwardingScore: 99999, isForwarded: true,
         externalAdReply: { //showAdAttribution: true,
-        	sourceUrl: 'https://vt.tiktok.com/ZSRRmS8vh/',
-            title: 'Jangan Bully Zivfurr Dia Kang Kopas <3',
+        	sourceUrl: 'https://tiktok.com/@alvin_ch1',
+            title: 'elaina waifuku <3',
             body: 'Follow Tiktok Saya Bang',
           thumbnail: await (await fetch(pp)).buffer()
         }
