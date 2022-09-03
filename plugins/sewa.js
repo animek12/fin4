@@ -64,7 +64,7 @@ Silahkan hubungi owner ( Ketik *.owner* ) jika ingin menyewa bot untuk grup chat
 ➠ Bot bisa di pindah pindah Grup (berlaku untuk yang sewa) kedalam grup lain (hanya 1 grup)
 ➠ Maaf untuk yang sudah Transfer tidak dapat di Refund/dibatalkan
 ➠ Membeli/Sewa berarti Setuju dalam Persyaratan tersebut`,
-      footer: wm,
+      footer: 'FIN',
       mentions: await conn.parseMention(judul),
       title: judul.trim(),
       buttonText: "Click Here",
