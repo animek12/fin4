@@ -48,6 +48,7 @@ Terimakasih Juga Untuk Kang Banned:
 • Jarot
 • Tio
 • Aca Mirabel
+• Fin
 • Penyedia Layanan API
 • Orang-orang yang Berdonasi
 ──────────────────────`
