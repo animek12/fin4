@@ -16,7 +16,8 @@ Terimakasih Juga Untuk Kang Banned:
 ──────────────────────
 • God
 • My ortu
-• Zivfurr / Ziv San ( Me )
+• Fin / Alfin (me)
+• Zivfurr
 • Nurutomo
 • Adiwajshing
 • Ariffb
@@ -48,7 +49,6 @@ Terimakasih Juga Untuk Kang Banned:
 • Jarot
 • Tio
 • Aca Mirabel
-• Fin
 • Penyedia Layanan API
 • Orang-orang yang Berdonasi
 ──────────────────────`
